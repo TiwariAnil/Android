@@ -8,7 +8,27 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class LoginActivity extends AppCompatActivity {
+
+    class SALON {
+        private String username;
+        private String password;
+
+        // constructor
+        public SALON(String name, String pass) {
+            this.username = name;
+            this.password = pass;
+        }};
 
     private EditText email;
     private EditText password;
@@ -34,10 +54,66 @@ public class LoginActivity extends AppCompatActivity {
              String salonPassword = password.getText().toString();
              toastMessage1.setText(salonEmail);
                 // Match with the database;
+                SALON obj = new SALON(salonEmail, salonPassword);
+
+                Gson gson = new Gson();
+//                gson.toJson(obj);
+                final String jsonInString = gson.toJson(obj);
+
+
+
                 if(1 == 1){
+
+                    // Instantiate the RequestQueue.
+
+                    RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                    StringRequest req = new StringRequest(Request.Method.POST, "http://127.0.0.1:8080/login",  new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            // Display the first 500 characters of the response string.
+                            toastMessage1.setText("Response is: "+ response.substring(0,500));
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            toastMessage1.setText("That didn't work!");
+                        }
+                    }) {
+                        @Override
+                        public byte[] getBody() throws AuthFailureError{
+                            return jsonInString.getBytes();
+                        }
+                        @Override
+                        public String getBodyContentType(){
+                            return "application/json";
+                        }
+                    };
+
+                                                   /*
+
+                    // Request a string response from the provided URL.
+                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    // Display the first 500 characters of the response string.
+                                    toastMessage1.setText("Response is: "+ response.substring(0,500));
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            toastMessage1.setText("That didn't work!");
+                        }
+                        */
+
+                    // Add the request to the RequestQueue.
+                    queue.add(req);
+
+                    /*
                     Intent i = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(i);
                     //setContentView(R.layout.home_postlogin);
+                    */
                 }
                 toastMessage1.show();
             }
