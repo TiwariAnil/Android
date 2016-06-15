@@ -15,16 +15,50 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/MobileNumber"
+        android:layout_marginTop="42dp"
+        android:hint="Mobile"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
-        android:hint="Mobile" />
+        android:layout_centerHorizontal="true" />
+    <EditText
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        android:ems="10"
+        android:id="@+id/CustomerName"
+        android:layout_above="@+id/gender_spinner"
+        android:layout_alignStart="@+id/MobileNumber"
+        android:layout_marginTop="52dp" />
+
+    <Spinner
+        android:visibility="gone"
+        android:id="@+id/gender_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/CustomerEmail"
+        android:layout_alignStart="@+id/MobileNumber"
+        android:layout_marginTop="62dp"
+        android:layout_alignEnd="@+id/CustomerName" />
+
+    <EditText
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/CustomerEmail"
+        android:hint="Email"
+        android:layout_above="@+id/NextButton"
+        android:layout_marginTop="72dp"
+        android:layout_alignStart="@+id/gender_spinner" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
-        android:id="@+id/EnterMobileButton"
-        android:layout_centerVertical="true"
+        android:text="Next"
+        android:id="@+id/NextButton"
+        android:layout_marginTop="82dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

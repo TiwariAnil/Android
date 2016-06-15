@@ -7,8 +7,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        android:theme="@style/AppTheme"
+        android:name="com.yourpanache.crmpanache.ApplicationClass">
+        <activity android:name=".dView.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
+        <activity android:name=".AppointmentMain" />
         <activity android:name=".CustomerAddActivity" />
-        <activity android:name=".CustomerAddActivity_x" />
         <activity android:name=".SelectServiceActivity"></activity>
     </application>
 

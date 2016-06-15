@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CRMpanache</string>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="action_settings">Settings</string>
 </resources>
