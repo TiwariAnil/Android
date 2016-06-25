@@ -1,6 +1,5 @@
 package com.yourpanache.crmpanache.bCommunicator;
 
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,10 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by user on 14-Jun-16.
+ * Created by user on 24-Jun-16.
  */
-public class LoginCommunicator {
-
+public class CustomerAddCommunicator {
 
     private List<CommunicatorHandler> responseListeners = new ArrayList<CommunicatorHandler>();
     private List<CommunicatorHandler> errorListeners = new ArrayList<CommunicatorHandler>();
@@ -41,7 +39,6 @@ public class LoginCommunicator {
         RequestQueue queue = Volley.newRequestQueue(ApplicationClass.getContext());
 
 //            StringRequest req = new StringRequest(Request.Method.POST, "http://164.99.140.98:8080/login", new Response.Listener<String>() {
-//            StringRequest req = new StringRequest(Request.Method.POST, "http://192.168.1.6:8080/login", new Response.Listener<String>() {
         StringRequest req = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -74,4 +71,5 @@ public class LoginCommunicator {
 
         queue.add(req);
     }
+
 }

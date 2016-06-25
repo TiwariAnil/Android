@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.yourpanache.crmpanache.HomeActivity;
+import com.yourpanache.crmpanache.dView.HomeActivity;
 import com.yourpanache.crmpanache.aModel.Helper;
 import com.yourpanache.crmpanache.aModel.SALON;
 import com.yourpanache.crmpanache.bCommunicator.LoginCommunicator;
@@ -59,7 +59,6 @@ public class LoginController implements CommunicatorHandler {
         try {
             //Do your response handling here
             if (response.contains("True")) {
-
                 toastMessage.setText("Response is: " + response);
 
                 //Go to next activity
@@ -72,11 +71,9 @@ public class LoginController implements CommunicatorHandler {
             }
         }
         catch(Exception ex) {
-
             ex.printStackTrace();
             toastMessage.setText("Some unknown error occurred");
         }
-
         //Show th toast
         toastMessage.show();
     }
