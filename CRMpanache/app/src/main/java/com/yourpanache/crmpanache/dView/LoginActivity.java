@@ -10,6 +10,10 @@ import android.widget.Toast;
 import com.yourpanache.crmpanache.R;
 import com.yourpanache.crmpanache.cController.LoginController;
 
+
+Use this for login page: http://sourcey.com/beautiful-android-login-and-signup-screens-with-material-design/
+
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email;
