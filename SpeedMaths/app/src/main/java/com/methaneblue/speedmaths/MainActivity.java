@@ -12,9 +12,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mulBtn;
     private Button testBtn;
     private Button loopBtn;
-    private Button challengeBtn;
+    private Button duelBtn;
     private Button settingBtn;
-
 
 
     @Override
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mulBtn = (Button) findViewById(R.id.mulbutton);
         testBtn = (Button) findViewById(R.id.testbutton);
         loopBtn = (Button) findViewById(R.id.loopbutton);
-        challengeBtn = (Button) findViewById(R.id.challengebutton);
+        duelBtn = (Button) findViewById(R.id.duelbutton);
         settingBtn = (Button) findViewById(R.id.settingsbutton);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,15 +57,16 @@ public class MainActivity extends AppCompatActivity {
         loopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, LoopActivity.class);
+                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
+//                Intent i = new Intent(MainActivity.this, LoopActivity.class);
                 startActivity(i);
             }
         });
 
-        challengeBtn.setOnClickListener(new View.OnClickListener() {
+        duelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, ChallengeActivity.class);
+                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
                 startActivity(i);
             }
         });

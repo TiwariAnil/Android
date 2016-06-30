@@ -25,7 +25,9 @@
         <activity android:name=".GAME_OVER" />
         <activity android:name=".MulActivity" />
         <activity android:name=".AddActivity" />
-        <activity android:name=".GAME_OVER"></activity>
+        <activity android:name=".GAME_OVER" />
+        <activity android:name=".TrialRoomActivity" />
+        <activity android:name=".GAME_OVER_DUEL"></activity>
     </application>
 
 </manifest>

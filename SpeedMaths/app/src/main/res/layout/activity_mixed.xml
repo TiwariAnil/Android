@@ -32,12 +32,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dip"
+        android:textColor="#ec7063"
+        android:layout_centerHorizontal="true"
         android:text="New Text"
         android:id="@+id/addQue"
-        android:textColor="#ec7063"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_above="@+id/addkeyview"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="54dp" />
 
     <com.methaneblue.speedmaths.KeyboardView

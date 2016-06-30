@@ -18,8 +18,6 @@ public class Mixedctivity extends AppCompatActivity {
     private int op1, tempNum, Divident;
     private int [] myArray = new int[4];
 
-
-
     private String Que;
     private String Ans, CorrectAns;
     private TextView QueView, AnsView, TimerField, ScoreView;

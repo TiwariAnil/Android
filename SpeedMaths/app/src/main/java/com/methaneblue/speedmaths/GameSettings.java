@@ -8,6 +8,7 @@ public final class GameSettings {
     public static int TimeMax;
     public static int RESISTANCE;
     public static int QUE_TOTAL;
+    public static int QUE_TOTAL_DUEL=10;
 
     public static int ADD_LOW;
     public static int ADD_HIGH;
