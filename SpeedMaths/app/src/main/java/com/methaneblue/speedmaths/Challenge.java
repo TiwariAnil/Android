@@ -1,9 +1,10 @@
 package com.methaneblue.speedmaths;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ChallengeActivity extends AppCompatActivity {
+public class Challenge extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

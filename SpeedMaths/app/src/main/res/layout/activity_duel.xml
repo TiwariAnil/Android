@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:id="@+id/opponent1"
+        android:rotation="180"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        >
+        <View
+            android:id="@+id/emptyview1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            />
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:text="Button 4"
+            android:id="@+id/opt1Btn4"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/emptyview1"
+            android:layout_toEndOf="@+id/emptyview1" />
+        <Button
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+
+            android:text="Button 3"
+            android:id="@+id/opt1Btn3"
+            android:layout_below="@+id/opt1Btn1"
+            android:layout_toStartOf="@+id/emptyview1"
+            android:layout_toLeftOf="@+id/emptyview1" />
+
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:text="Button 1"
+            android:id="@+id/opt1Btn1"
+            android:layout_above="@+id/opt1Btn4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/emptyview1"
+            android:layout_toStartOf="@+id/emptyview1" />
+
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:text="Button 2"
+            android:id="@+id/opt1Btn2"
+            android:layout_above="@+id/opt1Btn4"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/opt1Btn1"
+            android:layout_toRightOf="@+id/opt1Btn1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:textColor="#873600"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Que 1"
+            android:id="@+id/opt1Que"
+            android:layout_above="@+id/opt1Btn1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="52dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/opponent2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#EAF2F8"
+        >
+        <View
+            android:id="@+id/emptyview2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            />
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@id/emptyview2"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:text="Button 3"
+            android:id="@+id/opt2Btn3" />
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:layout_toRightOf="@id/emptyview2"
+            android:layout_alignParentBottom="true"
+            android:text="Button 4"
+            android:id="@+id/opt2Btn4" />
+
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:text="Button 2"
+            android:id="@+id/opt2Btn2"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:layout_above="@+id/opt2Btn3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/emptyview2"
+            android:layout_toStartOf="@+id/emptyview2" />
+
+        <Button
+            android:theme="@style/AppTheme.Button"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/White"
+            android:background="@color/Red"
+            android:text="Button 1"
+            android:id="@+id/opt2Btn1"
+            android:layout_above="@+id/opt2Btn3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/emptyview2"
+            android:layout_toEndOf="@+id/emptyview2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:textColor="#873600"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Que 2"
+            android:id="@+id/opt2Que"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp" />
+
+
+    </RelativeLayout>
+</LinearLayout>

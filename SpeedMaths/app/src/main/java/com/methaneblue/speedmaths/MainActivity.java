@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button addBtn;
     private Button mulBtn;
-    private Button testBtn;
+    private Button mixBtn;
     private Button loopBtn;
     private Button duelBtn;
     private Button settingBtn;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         addBtn = (Button) findViewById(R.id.addbutton);
         mulBtn = (Button) findViewById(R.id.mulbutton);
-        testBtn = (Button) findViewById(R.id.testbutton);
+        mixBtn = (Button) findViewById(R.id.mixdbutton);
         loopBtn = (Button) findViewById(R.id.loopbutton);
         duelBtn = (Button) findViewById(R.id.duelbutton);
         settingBtn = (Button) findViewById(R.id.settingsbutton);
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AddActivity.class);
+                Intent i = new Intent(MainActivity.this, Add.class);
                 startActivity(i);
             }
         });
@@ -41,15 +41,15 @@ public class MainActivity extends AppCompatActivity {
         mulBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, MulActivity.class);
+                Intent i = new Intent(MainActivity.this, Multi.class);
                 startActivity(i);
             }
         });
 
-        testBtn.setOnClickListener(new View.OnClickListener() {
+        mixBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Mixedctivity.class);
+                Intent i = new Intent(MainActivity.this, Mixed.class);
                 startActivity(i);
             }
         });
@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
         loopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
-//                Intent i = new Intent(MainActivity.this, LoopActivity.class);
+                Intent i = new Intent(MainActivity.this, Loop.class);
                 startActivity(i);
             }
         });
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         duelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
+                Intent i = new Intent(MainActivity.this, Duel.class);
                 startActivity(i);
             }
         });
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         settingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent i = new Intent(MainActivity.this, Settings.class);
                 startActivity(i);
             }
         });

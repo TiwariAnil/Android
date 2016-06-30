@@ -1,12 +1,13 @@
 package com.methaneblue.speedmaths;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class GAME_OVER extends AppCompatActivity {
+public class GAME_OVER extends Activity {
 
     Intent myIntent;
 

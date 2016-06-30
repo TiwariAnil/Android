@@ -5,22 +5,17 @@ import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class TrialRoomActivity extends Activity {
+public class Duel extends Activity {
 
     private int op1, tempNum, Divident;
     private int [] myArray = new int[4];
-
-
 
 
     private TextView QueView, AnsView, TimerField, ScoreView;
@@ -28,11 +23,11 @@ public class TrialRoomActivity extends Activity {
 
     private CountDownTimer Ctimer;
 
-//    private String [] Ans = new String[2];
+    //    private String [] Ans = new String[2];
     private String Ans;
 
     private String [] CorrectAns = new String[2];
-//    private String [] Que= new String[2];
+    //    private String [] Que= new String[2];
     private String Que;
     private int [] score = new int[2];
 
@@ -192,7 +187,7 @@ public class TrialRoomActivity extends Activity {
     private void genNextSet(int OP) {
 
         if(score[OP] == GameSettings.QUE_TOTAL_DUEL){
-            Intent myIntent = new Intent(TrialRoomActivity.this, GAME_OVER_DUEL.class);
+            Intent myIntent = new Intent(Duel.this, GAME_OVER_DUEL.class);
             myIntent.putExtra("score0",score[0]);
             myIntent.putExtra("score1",score[1]);
             startActivity(myIntent);

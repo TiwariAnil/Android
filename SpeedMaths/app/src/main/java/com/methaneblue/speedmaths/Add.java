@@ -1,17 +1,19 @@
 package com.methaneblue.speedmaths;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
 
-public class AddActivity extends AppCompatActivity {
+public class Add extends Activity {
 
     private int num1, num2, op1, tempNum;
     private String Que;
@@ -26,6 +28,7 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add);
         score = 0;
         total = 0;
@@ -53,14 +56,14 @@ public class AddActivity extends AppCompatActivity {
                 }
             }
         });
-//        Toast.makeText(AddActivity.this, "Your score = "+Integer.toString(score), Toast.LENGTH_LONG).show();
+//        Toast.makeText(Add.this, "Your score = "+Integer.toString(score), Toast.LENGTH_LONG).show();
     }
 
     private void genNextSet() {
         AnsView.setText("");
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));
         if(total == GameSettings.QUE_TOTAL){
-            Intent myIntent = new Intent(AddActivity.this, GAME_OVER.class);
+            Intent myIntent = new Intent(Add.this, GAME_OVER.class);
             myIntent.putExtra("score",score);
             myIntent.putExtra("type",1);
             startActivity(myIntent);

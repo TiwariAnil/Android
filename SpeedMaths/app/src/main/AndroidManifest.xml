@@ -18,16 +18,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".ChallengeActivity" />
-        <activity android:name=".LoopActivity" />
-        <activity android:name=".Mixedctivity" />
-        <activity android:name=".GAME_OVER" />
-        <activity android:name=".MulActivity" />
-        <activity android:name=".AddActivity" />
-        <activity android:name=".GAME_OVER" />
+        <activity android:name=".Settings" />
+
+        <activity android:name=".Add"
+
+             />
+
+        <activity android:name=".Challenge"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".Loop"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".Mixed"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".GAME_OVER"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".Multi"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
         <activity android:name=".TrialRoomActivity" />
-        <activity android:name=".GAME_OVER_DUEL"></activity>
+
+        <activity android:name=".GAME_OVER_DUEL"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".Duel"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     </application>
 
 </manifest>

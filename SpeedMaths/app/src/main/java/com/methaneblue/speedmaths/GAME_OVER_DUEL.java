@@ -1,12 +1,13 @@
 package com.methaneblue.speedmaths;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class GAME_OVER_DUEL extends AppCompatActivity {
+public class GAME_OVER_DUEL extends Activity {
 
     private RelativeLayout [] opLayout = new RelativeLayout[2];
     private int [] score = new int[2];
