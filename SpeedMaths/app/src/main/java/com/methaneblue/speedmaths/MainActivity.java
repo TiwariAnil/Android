@@ -67,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
         String addL = SP.getString("addType", "Level 1");
 
         prefManager.setAddSTRENGTH((Integer.parseInt(SP.getString("addType", "Level 1").toString())));
+        
+        prefManager.setMulSTRENGTH(Integer.parseInt(SP.getString("mulType", "Level 1").toString()));
+        prefManager.setDuelSTRENGTH(Integer.parseInt(SP.getString("duelType", "Level 1").toString()));
+        prefManager.setMixedSTRENGTH(Integer.parseInt(SP.getString("mixedType", "Level 1").toString()));
+        prefManager.setLoopSTRENGTH(Integer.parseInt(SP.getString("loopType", "Level 1").toString()));
+
 //        prefManager.setMulSTRENGTH(GameSettings.Mymap.get(SP.getString("mulType", "Level 1")));
 //        prefManager.setDuelSTRENGTH(GameSettings.Mymap.get(SP.getString("duelType", "Level 1")));
 //        prefManager.setMixedSTRENGTH(GameSettings.Mymap.get(SP.getString("mixedType", "Level 1")));
