@@ -15,4 +15,26 @@
     <string name="number_nine">9</string>
     <string name="btn_clear">Clear</string>
     <string name="btn_backspace">Back</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Maths!</string>
+    <string name="slide_1_desc">Play cool calculation games alone and with your partner!</string>
+
+    <string name="slide_2_title">Your Maths</string>
+    <string name="slide_2_desc">We tell your strengths and weakness!</string>
+
+    <string name="slide_3_title">Improve Smartly</string>
+    <string name="slide_3_desc">We Intelligently kill your weakness over the time!</string>
+
+    <string name="slide_4_title">World Percentile</string>
+    <string name="slide_4_desc">We give your rank in terms of percentile of our total users!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+
 </resources>

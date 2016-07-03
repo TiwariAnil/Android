@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="Your Name"
+        android:key="username"
+        android:summary="Please provide your username">
+    </EditTextPreference>
+
+    <CheckBoxPreference android:title="Application Updates"
+        android:defaultValue="false"
+        android:summary="This option if selected will allow the application to check for latest versions."
+        android:key="applicationUpdates" />
+
+    <ListPreference     android:title="Addition and Subtraction"
+        android:summary="Select the level for your practice"
+        android:key="addType"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+    <ListPreference     android:title="Multiplication and Division"
+        android:summary="Select the level for your practice"
+        android:key="mulType"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+    <ListPreference     android:title="Equations"
+        android:summary="Select the level for your practice"
+        android:key="mixedType"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+    <ListPreference     android:title="Loop Me!"
+        android:summary="Select the level for your practice"
+        android:key="loopType"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+    <ListPreference     android:title="Duel Game"
+        android:summary="Select the level for your practice"
+        android:key="duelType"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+</PreferenceScreen>

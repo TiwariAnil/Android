@@ -44,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="#FFFFFF"
         >
         <View
             android:id="@+id/emptyview2"
@@ -57,7 +58,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="You Final Score"
             android:id="@+id/op1View1"
-            android:layout_above="@+id/scoreView"
+            android:layout_above="@+id/op1Score1"
             android:layout_centerHorizontal="true" />
 
         <TextView

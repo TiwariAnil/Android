@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,12 +24,16 @@ public class Multi extends Activity {
     private int score, total;
     private CountDownTimer Ctimer;
 
-    private KeyboardView addV;
+    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mul);
+
+        prefManager = new PrefManager(this);
+        GameSettings.init(prefManager.getMulSTRENGTH());
 
         score = 0;
         total = 0;

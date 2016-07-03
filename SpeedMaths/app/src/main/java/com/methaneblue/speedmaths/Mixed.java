@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,14 +25,19 @@ public class Mixed extends Activity {
     private TextView QueView, AnsView, TimerField, ScoreView;
     private int result;
     private int score, total;
-    private CountDownTimer Ctimer;
+    private CountDownTimer Ctimer1;
 
-    private KeyboardView addV;
+    PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mixed);
+
+        prefManager = new PrefManager(this);
+        GameSettings.init(prefManager.getMixedSTRENGTH());
+
 
         score = 0;
         total = 0;
@@ -46,17 +53,14 @@ public class Mixed extends Activity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-
             @Override
             public void afterTextChanged(Editable s) {
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Ans = AnsView.getText().toString();
                 if (Ans.equalsIgnoreCase(CorrectAns)) {
                     score++;
-                    Ctimer.cancel();
                     genNextSet();
                 }
             }
@@ -107,7 +111,7 @@ public class Mixed extends Activity {
         QueView.setText(Que);
         CorrectAns = Integer.toString(result);
 
-        Ctimer = new CountDownTimer(GameSettings.TimeMax/2, 1000) {
+        Ctimer1 = new CountDownTimer(GameSettings.TimeMax/2, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 TimerField.setText("t = " + millisUntilFinished / 1000);

@@ -2,14 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.methaneblue.speedmaths">
 
-    <application
+    <application android:name=".GameSettings"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Welcome"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -18,34 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Settings" />
-
-        <activity android:name=".Add"
-
-             />
-
-        <activity android:name=".Challenge"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <activity android:name=".Loop"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <activity android:name=".Mixed"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <activity android:name=".GAME_OVER"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <activity android:name=".Multi"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Add" />
+        <activity android:name=".Multi" />
+        <activity android:name=".Mixed" />
+        <activity android:name=".Loop" />
+        <activity android:name=".Challenge" />
+        <activity android:name=".GAME_OVER" />
         <activity android:name=".TrialRoomActivity" />
+        <activity android:name=".GAME_OVER_DUEL" />
+        <activity android:name=".Duel" />
+        <activity android:name=".PreTest" android:noHistory="true"/>
 
-        <activity android:name=".GAME_OVER_DUEL"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <activity android:name=".Duel"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     </application>
 
 </manifest>

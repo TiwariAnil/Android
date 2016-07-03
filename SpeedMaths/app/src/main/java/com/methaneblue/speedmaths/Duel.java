@@ -2,10 +2,9 @@ package com.methaneblue.speedmaths;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,11 +16,7 @@ public class Duel extends Activity {
     private int op1, tempNum, Divident;
     private int [] myArray = new int[4];
 
-
-    private TextView QueView, AnsView, TimerField, ScoreView;
     private int result;
-
-    private CountDownTimer Ctimer;
 
     //    private String [] Ans = new String[2];
     private String Ans;
@@ -35,20 +30,22 @@ public class Duel extends Activity {
 
     private Button[][] opBtn = new Button[2][4];
 
+    PrefManager prefManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trial_room);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_duel);
+
+        prefManager = new PrefManager(this);
+
+        GameSettings.init(prefManager.getDuelSTRENGTH());
+
 
         score[0] = 0;
         score[1] = 0;
-
-//        addV = (KeyboardView) findViewById(R.id.addkeyview);
-//        AnsView = (EditText) findViewById(R.id.numberInput);
-//        TimerField = (TextView) findViewById(R.id.timerView);
-//        ScoreView = (TextView) findViewById(R.id.scoreView);
 
         opBtn[0][0] = (Button) findViewById(R.id.opt1Btn1);
         opBtn[0][1] = (Button) findViewById(R.id.opt1Btn2);
@@ -237,7 +234,6 @@ public class Duel extends Activity {
     }
 
     void setOptions(int OP){
-
 
         Random r = new Random();
         op1 = r.nextInt(4);

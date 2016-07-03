@@ -85,8 +85,12 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:id="@+id/settingsbutton"
-        android:layout_below="@+id/testbutton"
+        android:layout_below="@+id/mixdbutton"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
+
+
+
+
 
 </RelativeLayout>

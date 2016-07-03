@@ -23,17 +23,22 @@ public class Add extends Activity {
     private int score, total;
     private CountDownTimer Ctimer;
 
-    private KeyboardView addV;
+    PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add);
+
+        prefManager = new PrefManager(this);
+        GameSettings.init(prefManager.getAddSTRENGTH());
+
+
         score = 0;
         total = 0;
 
-//        addV = (KeyboardView) findViewById(R.id.addkeyview);
+
         AnsView = (EditText) findViewById(R.id.numberInput);
         TimerField = (TextView) findViewById(R.id.timerView);
         ScoreView = (TextView) findViewById(R.id.scoreView);
@@ -56,7 +61,7 @@ public class Add extends Activity {
                 }
             }
         });
-//        Toast.makeText(Add.this, "Your score = "+Integer.toString(score), Toast.LENGTH_LONG).show();
+//        Toast.makeText(Add.this, "Your score = "+Integer.toString(score), Toast.LENGTH_SHORT).show();
     }
 
     private void genNextSet() {
@@ -105,6 +110,5 @@ public class Add extends Activity {
                 genNextSet();
             }
         }.start();
-
     }
 }
