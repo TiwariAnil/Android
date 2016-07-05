@@ -35,17 +35,14 @@ public class Welcome extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
         if (!prefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
-            finish();
+//            finish();
         }
 
-
-        Toast.makeText(Welcome.this, "Welcome For First time", Toast.LENGTH_LONG).show();
+//        Toast.makeText(Welcome.this, "Welcome For First time", Toast.LENGTH_SHORT).show();
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -57,7 +54,6 @@ public class Welcome extends Activity {
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnNext = (Button) findViewById(R.id.btn_next);
-
 
         // layouts of all welcome sliders
         // add few more layouts if you want
@@ -124,6 +120,7 @@ public class Welcome extends Activity {
     private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
     }
+
     private void launchTestScreen() {
         prefManager.setFirstTimeLaunch(false);
         Intent intent = new Intent(Welcome.this, PreTest.class);

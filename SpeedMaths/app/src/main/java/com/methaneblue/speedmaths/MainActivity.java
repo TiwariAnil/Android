@@ -27,12 +27,6 @@ public class MainActivity extends AppCompatActivity  {
 
     private PrefManager prefManager;
     private SharedPreferences SP;
-//    SharedPreferences.Editor edit;
-//    SharedPreferences.OnSharedPreferenceChangeListener mListener;
-//    private Context mContext;
-
-//    private MyPreference myPref;
-
     private SharedPreferences settings;
 
 
@@ -41,91 +35,53 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        mContext = new Settings();
-
         prefManager = new PrefManager(this);
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
 
-        Toast.makeText(MainActivity.this, "PreScore: " + Integer.toString(GameSettings.PreScore), Toast.LENGTH_SHORT).show();
-        Toast.makeText(MainActivity.this, "PreTime: " + Integer.toString(GameSettings.PreTime), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "PreScore: " + Integer.toString(GameSettings.PreScore), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "PreTime: " + Integer.toString(GameSettings.PreTime), Toast.LENGTH_SHORT).show();
 
 
         settings = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("addType","6");
-        editor.putString("mulType","6");
-        editor.putString("mixedType","6");
-        editor.commit();
 
         if (prefManager.getLEVEL() == -2) {
             if (GameSettings.PreScore == 5) {
                 if (GameSettings.PreTime < 25) {
 
-                    Toast.makeText(MainActivity.this, "Making addType 3 ", Toast.LENGTH_SHORT).show();
-                    prefManager.editor.putString("addType", "3");
-                    prefManager.editor.putString("mulType", "2");
-                    prefManager.editor.commit();
-//                    SP. ("addType", "1");
-                    prefManager.setLEVEL(3);
-                    prefManager.setAddSTRENGTH(3);
-                    prefManager.setMulSTRENGTH(2);
+                    Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
+                    editor.putString("addType","3");
+                    editor.putString("mulType","2");
+                    editor.commit();
+
+
+//                    prefManager.editor.putString("addType", "3");
+//                    prefManager.editor.putString("mulType", "2");
+//                    prefManager.editor.commit();
+//
+//                    prefManager.setLEVEL(3);
+//                    prefManager.setAddSTRENGTH(3);
+//                    prefManager.setMulSTRENGTH(2);
                 }
             } else if (GameSettings.PreScore == 4) {
                 if (GameSettings.PreTime < 30) {
-                    Toast.makeText(MainActivity.this, "Making addType 2 ", Toast.LENGTH_SHORT).show();
-                    prefManager.editor.putString("addType", "2");
-//                    edit.putInt("mulType", 2);
-                    prefManager.editor.commit();
-                    prefManager.setLEVEL(2);
-                    prefManager.setAddSTRENGTH(2);
+                    Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
+
+//                    prefManager.editor.putString("addType", "2");
+//                    prefManager.editor.commit();
+
+                    editor.putString("addType","2");
+                    editor.commit();
+//                    prefManager.setLEVEL(2);
+//                    prefManager.setAddSTRENGTH(2);
                 }
             } else {
                 prefManager.setLEVEL(1);
             }
         } else {
-
-
+            prefManager.setLEVEL(1);
         }
-
-
-//        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-
-
-//        String strUserName = SP.getString("username", "NA");
-//        boolean bAppUpdates = SP.getBoolean("applicationUpdates", false);
-//        String downloadType = SP.getString("downloadType", "1");
-//        String addL = SP.getString("addType", "Level 1");
-
-
-
-//        prefManager.setMulSTRENGTH(Integer.parseInt(SP.getString("mulType", "1").toString()));
-//        prefManager.setDuelSTRENGTH(Integer.parseInt(SP.getString("duelType", "1").toString()));
-//        prefManager.setMixedSTRENGTH(Integer.parseInt(SP.getString("mixedType", "1").toString()));
-//        prefManager.setLoopSTRENGTH(Integer.parseInt(SP.getString("loopType", "1").toString()));
-
-//        prefManager.setMulSTRENGTH(GameSettings.Mymap.get(SP.getString("mulType", "Level 1")));
-//        prefManager.setDuelSTRENGTH(GameSettings.Mymap.get(SP.getString("duelType", "Level 1")));
-//        prefManager.setMixedSTRENGTH(GameSettings.Mymap.get(SP.getString("mixedType", "Level 1")));
-//        prefManager.setLoopSTRENGTH(GameSettings.Mymap.get(SP.getString("loopType", "Level 1")));
-
-
-//        int x = prefManager.getAddSTRENGTH();
-//        Toast.makeText(MainActivity.this, "Your LEVEL = " + Integer.toString(x), Toast.LENGTH_SHORT).show();
-//        Toast.makeText(MainActivity.this, " addLEVEL set is = " + addL, Toast.LENGTH_SHORT).show();
-//        Toast.makeText(MainActivity.this, "username = "+strUserName, Toast.LENGTH_SHORT).show();
-
-//        String addSTRENGTH =
-//        String mulSTRENGTH =
-//        String mixedSTRENGTH =
-//        String loopSTRENGTH =
-//        String duelSTRENGTH = SP.getString("duelType","Level 1");
-//        String duelSTRENGTH = SP.getString("","Level 1");
-
-//        GameSettings.init(prefManager.getLEVEL());
-
-//        Toast.makeText(MainActivity.this, "Pre Test Score = "+Integer.toString(PreScore), Toast.LENGTH_LONG).show();
-//        Toast.makeText(MainActivity.this, "Pre Test Time = "+Integer.toString(PreTime), Toast.LENGTH_LONG).show();
 
         addBtn = (Button) findViewById(R.id.addbutton);
         mulBtn = (Button) findViewById(R.id.mulbutton);
