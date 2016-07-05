@@ -2,7 +2,9 @@ package com.methaneblue.speedmaths;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -35,14 +38,12 @@ public class Mixed extends Activity {
 //        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mixed);
 
-        prefManager = new PrefManager(this);
-        GameSettings.init(prefManager.getMixedSTRENGTH());
-
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        Toast.makeText(Mixed.this, " mixedLEVEL set is = " + SP.getString("mixedType", "1").toString(), Toast.LENGTH_SHORT).show();
 
         score = 0;
         total = 0;
 
-//        addV = (KeyboardView) findViewById(R.id.addkeyview);
         AnsView = (EditText) findViewById(R.id.numberInput);
         TimerField = (TextView) findViewById(R.id.timerView);
         ScoreView = (TextView) findViewById(R.id.scoreView);

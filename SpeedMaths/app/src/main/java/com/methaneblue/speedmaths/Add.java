@@ -2,7 +2,9 @@ package com.methaneblue.speedmaths;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +12,7 @@ import android.text.TextWatcher;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -31,9 +34,10 @@ public class Add extends Activity {
 //        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add);
 
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         prefManager = new PrefManager(this);
-        GameSettings.init(prefManager.getAddSTRENGTH());
 
+        Toast.makeText(Add.this, " addLEVEL set is = " + SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT).show();
 
         score = 0;
         total = 0;

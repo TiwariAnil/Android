@@ -1,39 +1,69 @@
 package com.methaneblue.speedmaths;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
+import android.preference.PreferenceManager;
+import android.widget.Toast;
 
-import java.util.List;
+public class Settings extends PreferenceActivity  {
 
-public class Settings extends PreferenceActivity {
-
-
-
+    private SharedPreferences SP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
+
+        SharedPreferences.OnSharedPreferenceChangeListener mListener;
+        SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
     }
 
-    public static class MyPreferenceFragment extends PreferenceFragment
-    {
-        PrefManager prefManager;
+    public static class MyPreferenceFragment extends PreferenceFragment implements
+            SharedPreferences.OnSharedPreferenceChangeListener{
         @Override
-        public void onCreate(final Bundle savedInstanceState)
-        {
+        public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
+        }
 
-//            prefManager = new PrefManager(Settings.this);
-//            SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-//            prefManager.setAddSTRENGTH((Integer.parseInt(SP.getString("addType", "Level 1").toString())));
+        @Override
+        public void onResume() {
+            super.onResume();
+            getPreferenceScreen().getSharedPreferences()
+                    .registerOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            getPreferenceScreen().getSharedPreferences()
+                    .unregisterOnSharedPreferenceChangeListener(this);
+        }
+
+        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+            if (key.equals("username")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "bob"));
+            } else if (key.equals("addType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("mulType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("mixedType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("loopType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("duelType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            }
         }
     }
-
 }

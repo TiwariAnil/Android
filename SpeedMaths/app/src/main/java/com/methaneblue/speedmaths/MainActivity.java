@@ -1,18 +1,22 @@
 package com.methaneblue.speedmaths;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
+import android.os.Bundle;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private Button addBtn;
     private Button mulBtn;
@@ -22,32 +26,57 @@ public class MainActivity extends AppCompatActivity {
     private Button settingBtn;
 
     private PrefManager prefManager;
+    private SharedPreferences SP;
+//    SharedPreferences.Editor edit;
+//    SharedPreferences.OnSharedPreferenceChangeListener mListener;
+//    private Context mContext;
+
+//    private MyPreference myPref;
+
+    private SharedPreferences settings;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Put values into map to use them to set level
-        GameSettings.init_all();
+//        mContext = new Settings();
 
         prefManager = new PrefManager(this);
-//
-//        GameSettings appSetting = ((GameSettings) getApplicationContext());
-//        appSetting.setPreScore(score);
-//        appSetting.setPreTime(totalTime);
+        SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
 
         Toast.makeText(MainActivity.this, "PreScore: " + Integer.toString(GameSettings.PreScore), Toast.LENGTH_SHORT).show();
         Toast.makeText(MainActivity.this, "PreTime: " + Integer.toString(GameSettings.PreTime), Toast.LENGTH_SHORT).show();
+
+
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("addType","6");
+        editor.putString("mulType","6");
+        editor.putString("mixedType","6");
+        editor.commit();
+
         if (prefManager.getLEVEL() == -2) {
             if (GameSettings.PreScore == 5) {
                 if (GameSettings.PreTime < 25) {
+
+                    Toast.makeText(MainActivity.this, "Making addType 3 ", Toast.LENGTH_SHORT).show();
+                    prefManager.editor.putString("addType", "3");
+                    prefManager.editor.putString("mulType", "2");
+                    prefManager.editor.commit();
+//                    SP. ("addType", "1");
                     prefManager.setLEVEL(3);
                     prefManager.setAddSTRENGTH(3);
                     prefManager.setMulSTRENGTH(2);
                 }
             } else if (GameSettings.PreScore == 4) {
                 if (GameSettings.PreTime < 30) {
+                    Toast.makeText(MainActivity.this, "Making addType 2 ", Toast.LENGTH_SHORT).show();
+                    prefManager.editor.putString("addType", "2");
+//                    edit.putInt("mulType", 2);
+                    prefManager.editor.commit();
                     prefManager.setLEVEL(2);
                     prefManager.setAddSTRENGTH(2);
                 }
@@ -60,18 +89,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String strUserName = SP.getString("username", "NA");
-        boolean bAppUpdates = SP.getBoolean("applicationUpdates", false);
-        String downloadType = SP.getString("downloadType", "1");
-        String addL = SP.getString("addType", "Level 1");
+//        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
-        prefManager.setAddSTRENGTH((Integer.parseInt(SP.getString("addType", "Level 1").toString())));
-        
-        prefManager.setMulSTRENGTH(Integer.parseInt(SP.getString("mulType", "Level 1").toString()));
-        prefManager.setDuelSTRENGTH(Integer.parseInt(SP.getString("duelType", "Level 1").toString()));
-        prefManager.setMixedSTRENGTH(Integer.parseInt(SP.getString("mixedType", "Level 1").toString()));
-        prefManager.setLoopSTRENGTH(Integer.parseInt(SP.getString("loopType", "Level 1").toString()));
+
+//        String strUserName = SP.getString("username", "NA");
+//        boolean bAppUpdates = SP.getBoolean("applicationUpdates", false);
+//        String downloadType = SP.getString("downloadType", "1");
+//        String addL = SP.getString("addType", "Level 1");
+
+
+
+//        prefManager.setMulSTRENGTH(Integer.parseInt(SP.getString("mulType", "1").toString()));
+//        prefManager.setDuelSTRENGTH(Integer.parseInt(SP.getString("duelType", "1").toString()));
+//        prefManager.setMixedSTRENGTH(Integer.parseInt(SP.getString("mixedType", "1").toString()));
+//        prefManager.setLoopSTRENGTH(Integer.parseInt(SP.getString("loopType", "1").toString()));
 
 //        prefManager.setMulSTRENGTH(GameSettings.Mymap.get(SP.getString("mulType", "Level 1")));
 //        prefManager.setDuelSTRENGTH(GameSettings.Mymap.get(SP.getString("duelType", "Level 1")));
@@ -79,9 +110,9 @@ public class MainActivity extends AppCompatActivity {
 //        prefManager.setLoopSTRENGTH(GameSettings.Mymap.get(SP.getString("loopType", "Level 1")));
 
 
-        int x = prefManager.getAddSTRENGTH();
+//        int x = prefManager.getAddSTRENGTH();
 //        Toast.makeText(MainActivity.this, "Your LEVEL = " + Integer.toString(x), Toast.LENGTH_SHORT).show();
-        Toast.makeText(MainActivity.this, " addLEVEL set is = " + addL, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, " addLEVEL set is = " + addL, Toast.LENGTH_SHORT).show();
 //        Toast.makeText(MainActivity.this, "username = "+strUserName, Toast.LENGTH_SHORT).show();
 
 //        String addSTRENGTH =
@@ -91,8 +122,7 @@ public class MainActivity extends AppCompatActivity {
 //        String duelSTRENGTH = SP.getString("duelType","Level 1");
 //        String duelSTRENGTH = SP.getString("","Level 1");
 
-
-        GameSettings.init(prefManager.getLEVEL());
+//        GameSettings.init(prefManager.getLEVEL());
 
 //        Toast.makeText(MainActivity.this, "Pre Test Score = "+Integer.toString(PreScore), Toast.LENGTH_LONG).show();
 //        Toast.makeText(MainActivity.this, "Pre Test Time = "+Integer.toString(PreTime), Toast.LENGTH_LONG).show();
@@ -107,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GameSettings.init(Integer.parseInt(SP.getString("addType", "1").toString()));
                 Intent i = new Intent(MainActivity.this, Add.class);
                 startActivity(i);
             }
@@ -115,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
         mulBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GameSettings.init(Integer.parseInt(SP.getString("mulType", "1").toString()));
                 Intent i = new Intent(MainActivity.this, Multi.class);
                 startActivity(i);
             }
@@ -123,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
         mixBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GameSettings.init(Integer.parseInt(SP.getString("mixedType", "1").toString()));
                 Intent i = new Intent(MainActivity.this, Mixed.class);
                 startActivity(i);
             }
@@ -131,6 +167,8 @@ public class MainActivity extends AppCompatActivity {
         loopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GameSettings.init(Integer.parseInt(SP.getString("loopType", "1").toString()));
                 Intent i = new Intent(MainActivity.this, Loop.class);
                 startActivity(i);
             }
@@ -139,6 +177,8 @@ public class MainActivity extends AppCompatActivity {
         duelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GameSettings.init(Integer.parseInt(SP.getString("duelType", "1").toString()));
                 Intent i = new Intent(MainActivity.this, Duel.class);
                 startActivity(i);
             }
@@ -147,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
         settingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(MainActivity.this, Settings.class);
                 startActivity(i);
             }

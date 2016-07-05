@@ -1,5 +1,6 @@
 package com.methaneblue.speedmaths;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.Random;
 
-public class PreTest extends AppCompatActivity {
+public class PreTest extends Activity {
 
     private int op1, tempNum, Divident;
     private int[] myArray = new int[4];
@@ -30,7 +31,7 @@ public class PreTest extends AppCompatActivity {
     private boolean isRunning = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 

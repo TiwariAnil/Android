@@ -2,7 +2,9 @@ package com.methaneblue.speedmaths;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +12,7 @@ import android.text.TextWatcher;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -24,21 +27,18 @@ public class Multi extends Activity {
     private int score, total;
     private CountDownTimer Ctimer;
 
-    private PrefManager prefManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mul);
 
-        prefManager = new PrefManager(this);
-        GameSettings.init(prefManager.getMulSTRENGTH());
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        Toast.makeText(Multi.this, " mulLEVEL set is = " + SP.getString("mulType", "1").toString(), Toast.LENGTH_SHORT).show();
 
         score = 0;
         total = 0;
 
-//        addV = (KeyboardView) findViewById(R.id.addkeyview);
         AnsView = (EditText) findViewById(R.id.numberInput);
         TimerField = (TextView) findViewById(R.id.timerView);
         ScoreView = (TextView) findViewById(R.id.scoreView);

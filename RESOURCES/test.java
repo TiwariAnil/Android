@@ -9,12 +9,9 @@ import android.view.Window;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.github.lzyzsd.circleprogress.CircleProgress;
-
 public class Loop extends Activity {
 
-    private ProgressBar progressBar;
-    private CircleProgress circleProgress;
+    private ProgressBar progressBar, progressBarCircle;
     private int progressStatus = 0;
     private TextView textView;
     private Handler handler = new Handler();
@@ -24,17 +21,10 @@ public class Loop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loop);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-        circleProgress = (CircleProgress) findViewById(R.id.circle_progress);
+        progressBarCircle = (ProgressBar) findViewById(R.id.circle_progress);
         textView = (TextView) findViewById(R.id.textView1);
         progressBar.setScaleY(3f);
         // Start long running operation in a background thread
-
-//        for(int i=0; i<5; i++)
-            Progress(5);
-
-    }
-
-    public void Progress(final int numberOfRuns){
         new Thread(new Runnable() {
             public void run() {
                 while (progressStatus < 100) {
@@ -43,7 +33,7 @@ public class Loop extends Activity {
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
-                            circleProgress.setProgress(progressStatus);
+                            progressBarCircle.setProgress(progressStatus);
                             progressBar.setProgress(progressStatus);
                             textView.setText(progressStatus+"/"+progressBar.getMax());
                         }
@@ -56,9 +46,15 @@ public class Loop extends Activity {
                         e.printStackTrace();
                     }
                 }
-                progressStatus = 0;
-                Progress(numberOfRuns - 1);
             }
         }).start();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items
+        //to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.loop_menu, menu);
+        return true;
     }
 }
