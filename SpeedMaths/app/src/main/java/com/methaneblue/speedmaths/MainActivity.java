@@ -55,26 +55,13 @@ public class MainActivity extends AppCompatActivity  {
                     editor.putString("mulType","2");
                     editor.commit();
 
-
-//                    prefManager.editor.putString("addType", "3");
-//                    prefManager.editor.putString("mulType", "2");
-//                    prefManager.editor.commit();
-//
-//                    prefManager.setLEVEL(3);
-//                    prefManager.setAddSTRENGTH(3);
-//                    prefManager.setMulSTRENGTH(2);
                 }
             } else if (GameSettings.PreScore == 4) {
                 if (GameSettings.PreTime < 30) {
                     Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
 
-//                    prefManager.editor.putString("addType", "2");
-//                    prefManager.editor.commit();
-
                     editor.putString("addType","2");
                     editor.commit();
-//                    prefManager.setLEVEL(2);
-//                    prefManager.setAddSTRENGTH(2);
                 }
             } else {
                 prefManager.setLEVEL(1);

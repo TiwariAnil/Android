@@ -34,7 +34,7 @@ public class Multi extends Activity {
         setContentView(R.layout.activity_mul);
 
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Toast.makeText(Multi.this, " mulLEVEL set is = " + SP.getString("mulType", "1").toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(Multi.this, "Game Level : " + SP.getString("mulType", "1").toString(), Toast.LENGTH_SHORT).show();
 
         score = 0;
         total = 0;
@@ -107,7 +107,7 @@ public class Multi extends Activity {
         Ctimer = new CountDownTimer(GameSettings.TimeMax, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                TimerField.setText("t = " + millisUntilFinished / 1000);
+                TimerField.setText("" + millisUntilFinished / 1000);
             }
 
             public void onFinish() {

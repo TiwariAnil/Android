@@ -39,7 +39,7 @@ public class Mixed extends Activity {
         setContentView(R.layout.activity_mixed);
 
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Toast.makeText(Mixed.this, " mixedLEVEL set is = " + SP.getString("mixedType", "1").toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(Mixed.this, "Game Level : " + SP.getString("mixedType", "1").toString(), Toast.LENGTH_SHORT).show();
 
         score = 0;
         total = 0;
@@ -115,7 +115,7 @@ public class Mixed extends Activity {
         Ctimer1 = new CountDownTimer(GameSettings.TimeMax/2, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                TimerField.setText("t = " + millisUntilFinished / 1000);
+                TimerField.setText("" + millisUntilFinished / 1000);
             }
             public void onFinish() {
                 genNextSet();

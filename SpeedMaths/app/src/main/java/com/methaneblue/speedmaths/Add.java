@@ -37,7 +37,7 @@ public class Add extends Activity {
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         prefManager = new PrefManager(this);
 
-        Toast.makeText(Add.this, " addLEVEL set is = " + SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(Add.this, "Game Level : " + SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT).show();
 
         score = 0;
         total = 0;
@@ -65,7 +65,6 @@ public class Add extends Activity {
                 }
             }
         });
-//        Toast.makeText(Add.this, "Your score = "+Integer.toString(score), Toast.LENGTH_SHORT).show();
     }
 
     private void genNextSet() {
@@ -79,7 +78,6 @@ public class Add extends Activity {
             finish();
         }
         total = total+1;
-
 
         Random r = new Random();
         num1 = r.nextInt(GameSettings.ADD_HIGH - GameSettings.ADD_LOW + 1) + GameSettings.ADD_LOW;
@@ -108,7 +106,7 @@ public class Add extends Activity {
         Ctimer = new CountDownTimer(GameSettings.TimeMax, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                TimerField.setText("t = " + millisUntilFinished / 1000);
+                TimerField.setText("" + millisUntilFinished / 1000);
             }
             public void onFinish() {
                 genNextSet();

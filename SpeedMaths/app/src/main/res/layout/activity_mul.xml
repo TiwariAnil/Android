@@ -12,33 +12,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Score: 0"
         android:id="@+id/scoreView"
+        android:textColor="@color/dot_dark_screen2"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/addQue"
-        android:layout_alignEnd="@+id/addQue" />
+        android:layout_alignEnd="@+id/addQue"
+        android:textStyle="bold"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="10"
-        android:textColor="#48c9b0"
+        android:textColor="@color/colorAccent"
         android:id="@+id/timerView"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dip"
         android:text="New Text"
         android:id="@+id/addQue"
-        android:textColor="#ec7063"
+        android:textColor="@color/dot_dark_screen3"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_above="@+id/addkeyview"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp" />
+        android:layout_marginBottom="54dp"
+        android:textStyle="bold"/>
 
     <com.methaneblue.speedmaths.KeyboardView
         android:layout_width="match_parent"
@@ -47,8 +53,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-
-
 
 </RelativeLayout>
