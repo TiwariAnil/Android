@@ -5,6 +5,25 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAlignment="center"
+        android:text="New Text"
+        android:id="@+id/instruction"
+        android:textColor="#C0392B"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -13,10 +32,10 @@
         android:textColor="#C0392B"
         android:typeface="monospace"
         android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="135dp" />
+        android:layout_alignLeft="@+id/progressBar1"
+        android:layout_alignStart="@+id/progressBar1"
+        android:layout_alignRight="@+id/progressBar1"
+        android:layout_alignEnd="@+id/progressBar1" />
 
 
     <ProgressBar
@@ -26,7 +45,7 @@
         android:layout_height="wrap_content"
         android:indeterminate="false"
         android:max="100"
-        android:minHeight="200dip"
+        android:minHeight="50dip"
         android:minWidth="200dip"
         android:progress="1"
         android:layout_centerVertical="true"
@@ -38,7 +57,7 @@
         android:layout_height="100dp"
         custom:circle_progress="20"
         android:layout_below="@+id/progressBar1"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp" />
 
 </RelativeLayout>

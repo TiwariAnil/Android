@@ -13,10 +13,11 @@
         android:layout_gravity="center">
 
 
+
         <TextView
-            android:text="Hello App!"
+            android:text="TIP: You should start using this app!"
             android:id="@+id/textView1"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,6 +38,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:radius="6dp"
             android:background="#bb8fce"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
@@ -49,7 +51,7 @@
             android:id="@+id/addbutton"/>
 
         <Button
-
+            android:radius="60dp"
             android:background="#1DDFDA"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
