@@ -119,7 +119,7 @@ public class Loop extends Activity {
             Que = "Add "+Integer.toString(num1);
             finaAns = finaAns + num1;
 
-        } else if (op1 == 2 && num1 > finaAns){
+        } else if (op1 == 2 && num1 < finaAns){
             // Do the Subtraction
             Que = "Subtract "+Integer.toString(num1);
             finaAns = finaAns - num1;
