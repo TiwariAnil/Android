@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity  {
     private Button loopBtn;
     private Button duelBtn;
     private Button settingBtn;
+    private Button strengthBtn;
+    private Button showOffBtn;
+    private Button aboutUs;
 
     private PrefManager prefManager;
     private SharedPreferences SP;
@@ -76,6 +79,10 @@ public class MainActivity extends AppCompatActivity  {
         loopBtn = (Button) findViewById(R.id.loopbutton);
         duelBtn = (Button) findViewById(R.id.duelbutton);
         settingBtn = (Button) findViewById(R.id.settingsbutton);
+        strengthBtn = (Button) findViewById(R.id.strenghtbutton);
+        showOffBtn = (Button) findViewById(R.id.showoffbutton);
+        aboutUs = (Button) findViewById(R.id.aboutUsbutton);
+
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +139,33 @@ public class MainActivity extends AppCompatActivity  {
             public void onClick(View v) {
 
                 Intent i = new Intent(MainActivity.this, Settings.class);
+                startActivity(i);
+            }
+        });
+
+        strengthBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, Strengths.class);
+                startActivity(i);
+            }
+        });
+
+        showOffBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, Showoff.class);
+                startActivity(i);
+            }
+        });
+
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, About.class);
                 startActivity(i);
             }
         });

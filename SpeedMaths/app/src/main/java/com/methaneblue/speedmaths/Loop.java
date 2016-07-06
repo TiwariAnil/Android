@@ -99,6 +99,7 @@ public class Loop extends Activity {
         }).start();
     }
 
+
     private void genNextSet() {
 
         Random r = new Random();

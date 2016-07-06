@@ -33,7 +33,10 @@
         <activity
             android:name=".PreTest"
             android:noHistory="true" />
-        <activity android:name=".LOOP_OVER"></activity>
+        <activity android:name=".LOOP_OVER" />
+        <activity android:name=".Strengths" />
+        <activity android:name=".Showoff" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>

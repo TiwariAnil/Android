@@ -62,6 +62,7 @@ public class Mixed extends Activity {
                 Ans = AnsView.getText().toString();
                 if (Ans.equalsIgnoreCase(CorrectAns)) {
                     score++;
+                    Ctimer1.cancel();
                     genNextSet();
                 }
             }
