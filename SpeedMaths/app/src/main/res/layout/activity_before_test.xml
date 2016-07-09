@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/White"
+    android:background="#E74C3C"
     tools:context="com.methaneblue.speedmaths.GAME_OVER">
 
     <TextView
@@ -15,21 +15,35 @@
         android:layout_height="wrap_content"
         android:id="@+id/userAnswer"
         android:textStyle="bold"
-        android:background="@drawable/textview_bg"
         android:textColor="@color/DarkBlue"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:gravity="center"
-        android:text="Hey there, below is a magic button! Once you click that, in the TwoSome Section, player 1 will have all answers coming in DACB,DACB.. And you can outrun almost anyone using this magic. You can enable and disable form same button.Just act like a pro!"
-        android:layout_centerHorizontal="true" />
+        android:text="You are going to have a small test to get you started!"
+        android:layout_above="@+id/StartBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="183dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Magic Off!"
+        android:text="Let's Start"
         android:id="@+id/StartBtn"
-        android:background="@color/Pink"
+        android:background="#008000"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="96dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip it!"
+        android:id="@+id/SkipBtn"
+        android:background="#008000"
+        android:layout_alignBottom="@+id/StartBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
+                GameSettings.init(Integer.parseInt(SP.getString("duelType", "1").toString()));
                 Intent i = new Intent(MainActivity.this, Showoff.class);
                 startActivity(i);
             }

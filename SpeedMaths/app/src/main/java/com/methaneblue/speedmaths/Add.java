@@ -67,6 +67,14 @@ public class Add extends Activity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Ctimer.cancel();
+        Thread.currentThread().interrupt();
+        super.onBackPressed();
+        finish();
+    }
+
     private void genNextSet() {
         AnsView.setText("");
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));
@@ -74,6 +82,7 @@ public class Add extends Activity {
             Intent myIntent = new Intent(Add.this, GAME_OVER.class);
             myIntent.putExtra("score",score);
             myIntent.putExtra("type",1);
+//            Ctimer.cancel();
             startActivity(myIntent);
             finish();
         }

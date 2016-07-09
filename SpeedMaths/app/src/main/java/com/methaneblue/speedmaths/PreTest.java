@@ -2,6 +2,7 @@ package com.methaneblue.speedmaths;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,12 +30,52 @@ public class PreTest extends Activity {
     private TextView TimerView;
     private Button[] opBtn = new Button[4];
     private boolean isRunning = false;
+    private Button startB, skipB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        setContentView(R.layout.activity_before_test);
+        startB = (Button) findViewById(R.id.StartBtn);
+        skipB = (Button) findViewById(R.id.SkipBtn);
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+
+        startB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startTest();
+            }
+        });
+
+        skipB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(PreTest.this, Welcome.class);
+                GameSettings.PreTime = 0;
+                GameSettings.PreScore = 0;
+
+                if(isRunning)
+                    Ctimer.cancel();
+                startActivity(myIntent);
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Ctimer.cancel();
+        Thread.currentThread().interrupt();
+        super.onBackPressed();
+        finish();
+    }
+
+    void startTest(){
         setContentView(R.layout.activity_pre_test);
 
         score = 0;
@@ -108,9 +149,9 @@ public class PreTest extends Activity {
 
             if(isRunning)
                 Ctimer.cancel();
-            Toast.makeText(PreTest.this, "Intent from PreTest for Welcome", Toast.LENGTH_SHORT).show();
-            Toast.makeText(PreTest.this, "Score: "+Integer.toString(score), Toast.LENGTH_SHORT).show();
-            Toast.makeText(PreTest.this, "Time: "+Integer.toString(totalTime), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PreTest.this, "Intent from PreTest for Welcome", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PreTest.this, "Score: "+Integer.toString(score), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(PreTest.this, "Time: "+Integer.toString(totalTime), Toast.LENGTH_SHORT).show();
             startActivity(myIntent);
             finish();
         }

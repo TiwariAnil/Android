@@ -30,7 +30,10 @@ public class Loop extends Activity {
     private int result;
     private int score, total;
     private int finaAns;
-    private int started = 0;
+    private int started = 0, doneLoop=0;
+    private Thread th;
+    private boolean LOOP;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,29 +44,61 @@ public class Loop extends Activity {
         textView = (TextView) findViewById(R.id.textView1);
         QueView = (TextView) findViewById(R.id.instruction);
 
+        LOOP = true;
+
         progressBar.setScaleY(3f);
         // Start long running operation in a background thread
 //        Random r = new Random();
 //
 //        finaAns = r.nextInt(GameSettings.ADD_HIGH - GameSettings.ADD_LOW + 1) + GameSettings.ADD_LOW;
         QueView.setText("Get Ready!");
-        Progress(5);
+        doneLoop = 0;
+//        for (int i=0; i<3; i++){
+//             Progress(1);
+//            doneLoop++;
+//
+//        }
+        Progress(3);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        LOOP = false;
+        th.interrupt();
+        Loop.this.finish();
+        Thread.currentThread().interrupt();
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
+    public void onDestroy() {
+//        thread.interrupt();
+        th.interrupt();
+        Loop.this.finish();
+        Thread.currentThread().interrupt();
+//        getMainLooper().getThread().interrupt();
+        super.onDestroy();
+        finish();
     }
 
     public void Progress(final int numberOfRuns){
 //        QueView.setText(Que);
-        if (numberOfRuns == 0){
-            Intent myIntent = new Intent(Loop.this, LOOP_OVER.class);
-            myIntent.putExtra("answer",finaAns);
-            startActivity(myIntent);
+        if(numberOfRuns == 0){
+            th.interrupt();
+            if(LOOP == true) {
+                Intent myIntent = new Intent(Loop.this, LOOP_OVER.class);
+                myIntent.putExtra("answer", finaAns);
+                startActivity(myIntent);
+                super.onDestroy();
+            }
             finish();
         }
-        new Thread(new Runnable() {
-
+        th = new Thread(new Runnable() {
             public void run() {
                 genNextSet();
-                while (progressStatus < 100) {
+                while (progressStatus < 100 && LOOP) {
                     progressStatus += 1;
                     // Update the progress bar and display the
                     //current value in the text view
@@ -96,7 +131,9 @@ public class Loop extends Activity {
 
                 Progress(numberOfRuns - 1);
             }
-        }).start();
+        });
+
+        th.start();
     }
 
 

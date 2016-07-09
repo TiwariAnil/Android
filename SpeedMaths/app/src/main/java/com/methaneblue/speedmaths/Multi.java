@@ -67,6 +67,15 @@ public class Multi extends Activity {
 //        Toast.makeText(Add.this, "Your score = "+Integer.toString(score), Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onBackPressed() {
+        Ctimer.cancel();
+        Thread.currentThread().interrupt();
+        super.onBackPressed();
+        finish();
+    }
+
+
     private void genNextSet() {
         AnsView.setText("");
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));

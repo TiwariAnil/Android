@@ -6,6 +6,29 @@
     <color name="Red">#922B21</color>
     <color name="Pink">#FF4081</color>
     <color name="White">#FDFEFE</color>
+    <color name="DarkBlue">#0000A0</color>
+    <color name="Black">#000000</color>
+    <color name="Green">#14a895</color>
+
+
+    <!-- My Pallet -->
+
+
+    FFAEAE	FFF0AA	B0E57C	B4D8E7	56BAEC
+    <color name="P1">#FFAEAE</color>
+    <color name="P2">#FFF0AA</color>
+    <color name="P3">#B0E57C</color>
+    <color name="P4">#B4D8E7</color>
+    <color name="P5">#56BAEC</color>
+    <color name="P6">#ADADEB</color>
+
+    <!--<color name="P1">#f64c73</color>-->
+    <!--<color name="P2">#20d2bb</color>-->
+    <!--<color name="P3">#f98da5</color>-->
+    <!--<color name="P4">#f7646c</color>-->
+    <!--<color name="P5">#c873f4</color>-->
+    <!--<color name="P6">#3395ff</color>-->
+
 
 
     <!-- Screens background color-->

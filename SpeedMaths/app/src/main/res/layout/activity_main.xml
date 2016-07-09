@@ -15,10 +15,11 @@
 
 
         <TextView
-            android:text="TIP: You should start using this app!"
+            android:text="TIP: Make me your habit!"
             android:id="@+id/textView1"
             android:textSize="20dp"
             android:gravity="center"
+            android:background="@drawable/textview_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#C0392B"
@@ -106,7 +107,7 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Duel!"
+            android:text="TwoSome!"
             android:id="@+id/duelbutton"
             />
 

@@ -25,7 +25,7 @@
             android:text="You are there...just a few seconds!"
             android:textStyle="bold|italic"
             android:textColor="@color/Red"
-            android:id="@+id/textView6"
+            android:id="@+id/LoopT"
             android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true" />
 

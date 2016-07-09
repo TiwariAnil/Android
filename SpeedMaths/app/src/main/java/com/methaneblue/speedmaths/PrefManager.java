@@ -17,18 +17,23 @@ public class PrefManager {
 
     // Shared preferences file name
     private static final String PREF_NAME = "speedmaths-welcome";
-
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
-
-    private static final String addSTRENGTH = "addSTRENGTH";
-    private static final String mulSTRENGTH = "mulSTRENGTH";
-    private static final String mixedSTRENGTH = "mixedSTRENGTH";
-    private static final String loopSTRENGTH = "loopSTRENGTH";
-    private static final String duelSTRENGTH = "duelSTRENGTH";
-    private static final String speedSTRENGTH = "speedSTRENGTH";
+    private static final String addSTRENGTH = "addSTRENGTH"; //ADD
+    private static final String mulSTRENGTH = "mulSTRENGTH"; //MULTIPLY
+    private static final String mixedSTRENGTH = "mixedSTRENGTH"; //EQUATIONs
+    private static final String loopSTRENGTH = "loopSTRENGTH";  // MEMORY
+    private static final String duelSTRENGTH = "duelSTRENGTH"; // ANYTHING
+    private static final String speedSTRENGTH = "speedSTRENGTH"; //
     private static final String accuracySTRENGTH = "accuracySTRENGTH";
 
     private static final String LEVEL = "LEVEL";
+
+    // Constructor
+    public PrefManager(Context context) {
+        this._context = context;
+        pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+        editor = pref.edit();
+    }
 
     public int getAddSTRENGTH() {
         return pref.getInt(addSTRENGTH, 1);
@@ -54,12 +59,9 @@ public class PrefManager {
         return pref.getInt(accuracySTRENGTH, 1);
     }
 
-
-
     public int getLEVEL() {
         return pref.getInt(LEVEL, -2);
     }
-
 
     public void setAddSTRENGTH(int level) {
         editor.putInt(addSTRENGTH, level);
@@ -86,7 +88,6 @@ public class PrefManager {
         editor.commit();
     }
 
-
     public void setSpeedSTRENGTH(int x) {
         editor.putInt(speedSTRENGTH, x);
         editor.commit();
@@ -101,15 +102,6 @@ public class PrefManager {
         editor.putInt(LEVEL, level);
         editor.commit();
     }
-
-
-    public PrefManager(Context context) {
-        this._context = context;
-        pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
-        editor = pref.edit();
-    }
-
-
 
     public void setFirstTimeLaunch(boolean isFirstTime) {
         editor.putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTime);

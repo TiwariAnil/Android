@@ -70,6 +70,14 @@ public class Mixed extends Activity {
 //        Toast.makeText(Mixed.this, "Your score = "+Integer.toString(score), Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onBackPressed() {
+        Ctimer1.cancel();
+        Thread.currentThread().interrupt();
+        super.onBackPressed();
+        finish();
+    }
+
     private void genNextSet() {
 
         AnsView.setText("");
@@ -78,6 +86,7 @@ public class Mixed extends Activity {
             Intent myIntent = new Intent(Mixed.this, GAME_OVER.class);
             myIntent.putExtra("score",score);
             myIntent.putExtra("type",1);
+//            Ctimer1.cancel();
             startActivity(myIntent);
             finish();
         }
@@ -113,7 +122,7 @@ public class Mixed extends Activity {
         QueView.setText(Que);
         CorrectAns = Integer.toString(result);
 
-        Ctimer1 = new CountDownTimer(GameSettings.TimeMax/2, 1000) {
+        Ctimer1 = new CountDownTimer(GameSettings.TimeMax, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 TimerField.setText("" + millisUntilFinished / 1000);
