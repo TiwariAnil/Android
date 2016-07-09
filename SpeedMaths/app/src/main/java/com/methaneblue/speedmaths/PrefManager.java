@@ -35,67 +35,67 @@ public class PrefManager {
         editor = pref.edit();
     }
 
-    public int getAddSTRENGTH() {
-        return pref.getInt(addSTRENGTH, 1);
+    public Float getAddSTRENGTH() {
+        return pref.getFloat(addSTRENGTH, 1);
     }
 
-    public int getMulSTRENGTH() {
-        return pref.getInt(mulSTRENGTH, 1);
+    public Float getMulSTRENGTH() {
+        return pref.getFloat(mulSTRENGTH, 1);
     }
 
-    public int getMixedSTRENGTH() {
-        return pref.getInt(mixedSTRENGTH, 1);
+    public Float getMixedSTRENGTH() {
+        return pref.getFloat(mixedSTRENGTH, 1);
     }
 
-    public int getLoopSTRENGTH() {return pref.getInt(loopSTRENGTH, 1); }
+    public Float getLoopSTRENGTH() {return pref.getFloat(loopSTRENGTH, 1); }
 
-    public int getDuelSTRENGTH() {return pref.getInt(duelSTRENGTH, 1); }
+    public Float getDuelSTRENGTH() {return pref.getFloat(duelSTRENGTH, 1); }
 
-    public int getSpeedSTRENGTH() {
-        return pref.getInt(speedSTRENGTH, 1);
+    public Float getSpeedSTRENGTH() {
+        return pref.getFloat(speedSTRENGTH, 1);
     }
 
-    public int getAccuracySTRENGTH() {
-        return pref.getInt(accuracySTRENGTH, 1);
+    public Float getAccuracySTRENGTH() {
+        return pref.getFloat(accuracySTRENGTH, 1);
+    }
+
+    public void setAddSTRENGTH(Float level) {
+        editor.putFloat(addSTRENGTH, level);
+        editor.commit();
+    }
+
+    public void setMulSTRENGTH(Float level) {
+        editor.putFloat(mulSTRENGTH, level);
+        editor.commit();
+    }
+
+    public void setMixedSTRENGTH(Float level) {
+        editor.putFloat(mixedSTRENGTH, level);
+        editor.commit();
+    }
+
+    public void setLoopSTRENGTH(Float level){
+        editor.putFloat(loopSTRENGTH, level);
+        editor.commit();
+    }
+
+    public void setDuelSTRENGTH(Float level){
+        editor.putFloat(duelSTRENGTH, level);
+        editor.commit();
+    }
+
+    public void setSpeedSTRENGTH(Float x) {
+        editor.putFloat(speedSTRENGTH, x);
+        editor.commit();
+    }
+
+    public void setAccuracySTRENGTH(Float level) {
+        editor.putFloat(accuracySTRENGTH, level);
+        editor.commit();
     }
 
     public int getLEVEL() {
         return pref.getInt(LEVEL, -2);
-    }
-
-    public void setAddSTRENGTH(int level) {
-        editor.putInt(addSTRENGTH, level);
-        editor.commit();
-    }
-
-    public void setMulSTRENGTH(int level) {
-        editor.putInt(mulSTRENGTH, level);
-        editor.commit();
-    }
-
-    public void setMixedSTRENGTH(int level) {
-        editor.putInt(mixedSTRENGTH, level);
-        editor.commit();
-    }
-
-    public void setLoopSTRENGTH(int level){
-        editor.putInt(loopSTRENGTH, level);
-        editor.commit();
-    }
-
-    public void setDuelSTRENGTH(int level){
-        editor.putInt(duelSTRENGTH, level);
-        editor.commit();
-    }
-
-    public void setSpeedSTRENGTH(int x) {
-        editor.putInt(speedSTRENGTH, x);
-        editor.commit();
-    }
-
-    public void setAccuracySTRENGTH(int level) {
-        editor.putInt(accuracySTRENGTH, level);
-        editor.commit();
     }
 
     public void setLEVEL(int level){

@@ -12,11 +12,11 @@ public class ProgressUpdater {
 
     private ProgressBar Bar;
     private CircleProgress CBar;
-    private int Strength, maxStrength, progressStatus;
+    private float Strength, maxStrength, progressStatus;
 
     private Handler handler = new Handler();
 
-    public  ProgressUpdater(ProgressBar Bar, CircleProgress CBar, int Strength, int maxStrength){
+    public  ProgressUpdater(ProgressBar Bar, CircleProgress CBar, float Strength, float maxStrength){
         this.Bar = Bar;
         this.Strength = Strength;
         this.maxStrength = maxStrength;
@@ -34,7 +34,7 @@ public class ProgressUpdater {
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
-                            CBar.setProgress(progressStatus);
+                            CBar.setProgress((int)progressStatus);
 //                            textView.setText(progressStatus+"/"+progressBar.getMax());
                         }
                     });
@@ -49,7 +49,6 @@ public class ProgressUpdater {
             }
         }).start();
     }
-
 
     public void UpdateProgress(){
         new Thread(new Runnable() {
@@ -60,7 +59,7 @@ public class ProgressUpdater {
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
-                            Bar.setProgress(progressStatus);
+                            Bar.setProgress((int)progressStatus);
 //                            textView.setText(progressStatus+"/"+progressBar.getMax());
                         }
                     });
@@ -75,6 +74,4 @@ public class ProgressUpdater {
             }
         }).start();
     }
-
-
 }

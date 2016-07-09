@@ -29,6 +29,8 @@ public class Mixed extends Activity {
     private int result;
     private int score, total;
     private CountDownTimer Ctimer1;
+    private int CurrTime, totalTime;
+
 
     PrefManager prefManager;
 
@@ -41,8 +43,13 @@ public class Mixed extends Activity {
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         Toast.makeText(Mixed.this, "Game Level : " + SP.getString("mixedType", "1").toString(), Toast.LENGTH_SHORT).show();
 
+        totalTime = 0;
+        CurrTime = 0;
         score = 0;
         total = 0;
+
+        GameSettings.CurrentTimeScore=0;
+        GameSettings.CurrentType = 3;
 
         AnsView = (EditText) findViewById(R.id.numberInput);
         TimerField = (TextView) findViewById(R.id.timerView);
@@ -61,6 +68,9 @@ public class Mixed extends Activity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Ans = AnsView.getText().toString();
                 if (Ans.equalsIgnoreCase(CorrectAns)) {
+                    if(CurrTime <= GameSettings.CurrentTimeLimit){
+                        GameSettings.CurrentTimeScore++;
+                    }
                     score++;
                     Ctimer1.cancel();
                     genNextSet();
@@ -84,9 +94,10 @@ public class Mixed extends Activity {
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));
         if(total == GameSettings.QUE_TOTAL){
             Intent myIntent = new Intent(Mixed.this, GAME_OVER.class);
-            myIntent.putExtra("score",score);
-            myIntent.putExtra("type",1);
+//            myIntent.putExtra("score",score);
+//            myIntent.putExtra("type",1);
 //            Ctimer1.cancel();
+            GameSettings.CurrentScore = score;
             startActivity(myIntent);
             finish();
         }
@@ -126,8 +137,10 @@ public class Mixed extends Activity {
 
             public void onTick(long millisUntilFinished) {
                 TimerField.setText("" + millisUntilFinished / 1000);
+                CurrTime = (GameSettings.TimeMax/1000) - (int) (millisUntilFinished / 1000);
             }
             public void onFinish() {
+                CurrTime = 0;
                 genNextSet();
             }
         }.start();

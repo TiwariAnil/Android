@@ -2,6 +2,7 @@ package com.methaneblue.speedmaths;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class GAME_OVER extends Activity {
     private TextView scoreV;
     private float score, total, percent;
     private int type;
+
+    private StrengthUpdater strengthUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,11 @@ public class GAME_OVER extends Activity {
         percent = score/total;
         percent = percent * 100;
 
-        scoreV.setText(Integer.toString((int)score)+"/"+Integer.toString((int)total));;
+        strengthUpdate = new StrengthUpdater(GAME_OVER.this);
+        strengthUpdate.UpdateStrength();
+
+//        scoreV.setText(Integer.toString((int)score)+"/"+Integer.toString((int)total));;
+        scoreV.setText(Integer.toString(GameSettings.CurrentFinalScore)+"/"+Integer.toString(GameSettings.CurrentTotalScore));
         if( percent > 90.0 ){
             msgV.setText("I can just say, You are Awesome!");
 
@@ -46,4 +53,13 @@ public class GAME_OVER extends Activity {
             msgV.setText("Don't worry, I am there!");
         }
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Thread.currentThread().interrupt();
+        super.onBackPressed();
+        finish();
+    }
 }
+

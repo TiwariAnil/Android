@@ -25,6 +25,7 @@ public class Add extends Activity {
     private int result;
     private int score, total;
     private CountDownTimer Ctimer;
+    private int CurrTime, totalTime;
 
     PrefManager prefManager;
 
@@ -39,9 +40,14 @@ public class Add extends Activity {
 
         Toast.makeText(Add.this, "Game Level : " + SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT).show();
 
+
+        totalTime = 0;
+        CurrTime = 0;
         score = 0;
         total = 0;
 
+        GameSettings.CurrentTimeScore=0;
+        GameSettings.CurrentType = 1;
 
         AnsView = (EditText) findViewById(R.id.numberInput);
         TimerField = (TextView) findViewById(R.id.timerView);
@@ -60,6 +66,9 @@ public class Add extends Activity {
                 Ans = AnsView.getText().toString();
                 if (Ans.equalsIgnoreCase(CorrectAns)) {
                     score++;
+                    if(CurrTime <= GameSettings.CurrentTimeLimit){
+                        GameSettings.CurrentTimeScore++;
+                    }
                     Ctimer.cancel();
                     genNextSet();
                 }
@@ -80,8 +89,10 @@ public class Add extends Activity {
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));
         if(total == GameSettings.QUE_TOTAL){
             Intent myIntent = new Intent(Add.this, GAME_OVER.class);
-            myIntent.putExtra("score",score);
-            myIntent.putExtra("type",1);
+//            myIntent.putExtra("score",score);
+//            myIntent.putExtra("type",1);
+            GameSettings.CurrentScore = score;
+//            GameSettings.CurrentTimeScore =
 //            Ctimer.cancel();
             startActivity(myIntent);
             finish();
@@ -116,8 +127,10 @@ public class Add extends Activity {
 
             public void onTick(long millisUntilFinished) {
                 TimerField.setText("" + millisUntilFinished / 1000);
+                CurrTime = (GameSettings.TimeMax/1000) - (int) (millisUntilFinished / 1000);
             }
             public void onFinish() {
+                CurrTime = 0;
                 genNextSet();
             }
         }.start();

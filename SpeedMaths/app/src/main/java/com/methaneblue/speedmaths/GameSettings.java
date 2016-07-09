@@ -31,7 +31,34 @@ public final class GameSettings extends Application {
     public static int PreScore;
     public static int PreTime;
 
+    public static int CurrentScore;
+    public static int CurrentTimeLimit;
+    public static int CurrentTimeScore;
+    public static int CurrentLevel;
+    public static int CurrentFinalScore;
+    public static int CurrentTotalScore;
+    public static int CurrentType;
+
+    public static void ComputeScore(){
+
+        int total = QUE_TOTAL * CurrentLevel;
+
+        // Consider TIME, For each QUE, if you solve under Half time, you will get 1 Extra point.
+        total = total + (QUE_TOTAL);
+        CurrentTotalScore = total;
+
+        CurrentFinalScore = CurrentScore * CurrentLevel;
+        CurrentFinalScore = CurrentFinalScore + CurrentTimeScore;
+
+    }
+
     public static void init(int level){
+
+        CurrentLevel = level;
+
+
+        CurrentTimeLimit = TimeMax/2000;
+
         // Testing LEVEL
         if( level == -1){
             RESISTANCE = 1;
@@ -40,7 +67,11 @@ public final class GameSettings extends Application {
             MUL_LOW = 1;
             MUL_HIGH = 10;
             QUE_TOTAL = 3;
-            TimeMax = 11000;
+            TimeMax = 6000;
+
+            //Loop;
+            CurrentTotalScore = 10;
+
         }
         //LEVEL 1
         if( level == 1){
@@ -49,8 +80,10 @@ public final class GameSettings extends Application {
             ADD_HIGH = 10;
             MUL_LOW = 1;
             MUL_HIGH = 10;
-            QUE_TOTAL = 10;
-            TimeMax = 11000;
+            QUE_TOTAL = 5;
+            TimeMax = 6000;
+            CurrentTotalScore = 10;
+
         }else if( level == 2) {
             RESISTANCE = 1;
             ADD_LOW = 1;
@@ -59,14 +92,17 @@ public final class GameSettings extends Application {
             MUL_HIGH = 10;
             QUE_TOTAL = 20;
             TimeMax = 6000;
+            CurrentTotalScore = 20;
+
         }else if (level == 3){
             RESISTANCE = 2;
             ADD_LOW = 10;
             ADD_HIGH = 100;
-            MUL_LOW = 10;
-            MUL_HIGH = 100;
+            MUL_LOW = 1;
+            MUL_HIGH = 10;
             QUE_TOTAL = 10;
             TimeMax = 11000;
+            CurrentTotalScore = 30;
         }else if (level == 4){
             RESISTANCE = 2;
             ADD_LOW = 10;
@@ -75,14 +111,16 @@ public final class GameSettings extends Application {
             MUL_HIGH = 100;
             QUE_TOTAL = 20;
             TimeMax = 6000;
+            CurrentTotalScore = 40;
         }else if (level == 5){
             RESISTANCE = 3;
             ADD_LOW = 100;
             ADD_HIGH = 1000;
-            MUL_LOW = 10;
-            MUL_HIGH = 100;
+            MUL_LOW = 1;
+            MUL_HIGH = 10;
             QUE_TOTAL = 10;
             TimeMax = 11000;
+            CurrentTotalScore = 50;
         }else if (level == 6){
             RESISTANCE = 3;
             ADD_LOW = 100;
@@ -91,6 +129,7 @@ public final class GameSettings extends Application {
             MUL_HIGH = 100;
             QUE_TOTAL = 20;
             TimeMax = 6000;
+            CurrentTotalScore = 60;
         }
     }
 

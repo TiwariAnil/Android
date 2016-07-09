@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LOOP_OVER extends AppCompatActivity {
 
@@ -18,7 +19,8 @@ public class LOOP_OVER extends AppCompatActivity {
     private TextView correctV;
     private int answer, tmp;
     private Button checkB;
-    String userAns;
+    private String userAns;
+    private StrengthUpdater strengthUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +44,28 @@ public class LOOP_OVER extends AppCompatActivity {
             }
         });
 
+        strengthUpdate = new StrengthUpdater(LOOP_OVER.this);
+
+
+        GameSettings.CurrentTimeScore=0;
         checkB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userAns = inputText.getText().toString();
                 checkB.setVisibility(View.GONE);
-                if( answer == Integer.parseInt(inputText.getText().toString()) ){
+                if( inputText.length() <= 0){
+                    Toast.makeText(LOOP_OVER.this, "Please Enter your answer!", Toast.LENGTH_SHORT).show();
+                }else if(answer == Integer.parseInt(inputText.getText().toString()) ){
                     msgV.setText("I can just say, You are Awesome!");
 
                 }else {
                     msgV.setText("That's not what Ramanujan will answer!");
+                    correctV.setText("Answer : "+Integer.toString(answer));
+                    correctV.setVisibility(View.VISIBLE);
                 }
-                correctV.setText("Answer : "+Integer.toString(answer));
+                strengthUpdate.UpdateStrength();
                 msgV.setVisibility(View.VISIBLE);
-                correctV.setVisibility(View.VISIBLE);
+
             }
         });
     }

@@ -46,6 +46,10 @@ public class Loop extends Activity {
 
         LOOP = true;
 
+
+        GameSettings.CurrentTimeScore=0;
+        GameSettings.CurrentType = 4;
+
         progressBar.setScaleY(3f);
         // Start long running operation in a background thread
 //        Random r = new Random();
@@ -58,7 +62,7 @@ public class Loop extends Activity {
 //            doneLoop++;
 //
 //        }
-        Progress(3);
+        Progress(GameSettings.QUE_TOTAL);
 
     }
 

@@ -201,7 +201,6 @@ public class PreTest extends Activity {
                 isRunning = false;
                 genNextSet();
             }
-
         }.start();
     }
 

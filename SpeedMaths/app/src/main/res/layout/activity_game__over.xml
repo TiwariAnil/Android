@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="You Final Score"
+        android:text="You Performance Score"
         android:id="@+id/textView3"
         android:layout_above="@+id/scoreView"
         android:layout_centerHorizontal="true" />

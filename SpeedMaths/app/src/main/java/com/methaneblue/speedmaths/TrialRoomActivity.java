@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,10 +27,18 @@ import java.util.Random;
 public class TrialRoomActivity extends ActionBarActivity {
 
     RecyclerView recyclerView;
-
+    private  Button testB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trial_room);
+        testB = (Button) findViewById(R.id.testB);
+
+        testB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(TrialRoomActivity.this, "I am pressed for you!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -16,6 +16,10 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
 
+/**
+ * Created by user on 05-July-16.
+ */
+
 public class MainActivity extends AppCompatActivity  {
 
     private Button addBtn;
@@ -166,7 +170,8 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, About.class);
+//                Intent i = new Intent(MainActivity.this, About.class);
+                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
                 startActivity(i);
             }
         });
