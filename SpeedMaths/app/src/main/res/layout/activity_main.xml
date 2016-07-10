@@ -15,7 +15,7 @@
 
 
         <TextView
-            android:text="TIP: Make me your habit!"
+            android:text="Make me your habit!"
             android:id="@+id/textView1"
             android:textSize="20dp"
             android:gravity="center"
@@ -40,7 +40,7 @@
 
         <Button
             android:radius="6dp"
-            android:background="#bb8fce"
+            android:background="@drawable/b1"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
@@ -48,12 +48,13 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="+ and -"
+            android:text="+ &amp; -"
+            android:textStyle="bold"
             android:id="@+id/addbutton"/>
 
         <Button
             android:radius="60dp"
-            android:background="#1DDFDA"
+            android:background="@drawable/b2"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="5dp"
@@ -61,11 +62,12 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="x and /"
+            android:text="x &amp; /"
+            android:textStyle="bold"
             android:id="@+id/mulbutton"/>
 
         <Button
-            android:background="#ec7063"
+            android:background="@drawable/b3"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
@@ -75,7 +77,8 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Mixed!"
+            android:text="Equations"
+            android:textStyle="bold"
             android:id="@+id/mixdbutton"      />
     </LinearLayout>
 
@@ -86,7 +89,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:background="#5dade2"
+            android:background="@drawable/b4"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
             android:layout_marginLeft="10dp"
@@ -94,12 +97,13 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Loop me!"
+            android:text="Looop"
+            android:textStyle="bold"
             android:id="@+id/loopbutton"
             />
 
         <Button
-            android:background="#bfc9ca"
+            android:background="@drawable/b5"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
             android:layout_marginLeft="5dp"
@@ -107,12 +111,13 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TwoSome!"
+            android:text="TwoSome"
+            android:textStyle="bold"
             android:id="@+id/duelbutton"
             />
 
         <Button
-            android:background="#f8c471"
+            android:background="@drawable/b6"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
             android:layout_marginLeft="10dp"
@@ -120,7 +125,8 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Strength"
+            android:text="Strengths"
+            android:textStyle="bold"
             android:id="@+id/strenghtbutton"
             />
     </LinearLayout>
@@ -132,7 +138,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:background="@color/bg_screen2"
+            android:background="@drawable/b7"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
@@ -140,12 +146,13 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Show Off ;)"
+            android:text="Cheat"
+            android:textStyle="bold"
             android:id="@+id/showoffbutton"
             />
 
         <Button
-            android:background="#7AD671"
+            android:background="@drawable/b8"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="5dp"
@@ -154,11 +161,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Settings"
+            android:textStyle="bold"
             android:id="@+id/settingsbutton"
             />
 
         <Button
-            android:background="@color/bg_screen1"
+            android:background="@drawable/b9"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
@@ -167,6 +175,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="About"
+            android:textStyle="bold"
             android:id="@+id/aboutUsbutton"
             />
     </LinearLayout>

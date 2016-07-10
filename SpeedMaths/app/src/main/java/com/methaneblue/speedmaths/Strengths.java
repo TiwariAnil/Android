@@ -46,7 +46,7 @@ public class Strengths extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                toast[0] = Toast.makeText(Strengths.this, "Coming Soon!", Toast.LENGTH_SHORT);
+                toast[0] = Toast.makeText(Strengths.this, "Percentile :"+(float)SP.getFloat("perSTRENGTH", 1), Toast.LENGTH_SHORT);
                 toast[0].show();
 
                 handler.postDelayed(new Runnable() {
@@ -148,7 +148,7 @@ public class Strengths extends AppCompatActivity {
 
         SP = PreferenceManager.getDefaultSharedPreferences(this);
 
-        percentP = new ProgressUpdater(percentBar,CpercentBar, 90, 100);
+        percentP = new ProgressUpdater(percentBar,CpercentBar, SP.getFloat("percentSTRENGTH", 1), 100);
         addP = new ProgressUpdater(addBar, CaddBar,SP.getFloat("addSTRENGTH", 1), 100);
         mulP = new ProgressUpdater(mulBar, CmulBar,SP.getFloat("mulSTRENGTH", 1), 100);
         mixedP = new ProgressUpdater(mixedBar, CmixedBar, SP.getFloat("mixedSTRENGTH", 1), 100);

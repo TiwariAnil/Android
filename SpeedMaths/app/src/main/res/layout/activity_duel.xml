@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="#ddffff"
         >
         <View
             android:id="@+id/emptyview1"
@@ -66,13 +67,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dip"
-            android:textColor="#873600"
+            android:textColor="@color/DarkBlue"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Que 1"
+            android:textStyle="bold"
             android:id="@+id/opt1Que"
-            android:layout_above="@+id/opt1Btn1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="52dp" />
+            android:layout_marginTop="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
     <RelativeLayout
@@ -80,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#EAF2F8"
+        android:background="#ddffff"
         >
 
         <View
@@ -135,13 +137,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dip"
-            android:textColor="#873600"
+            android:textColor="@color/DarkBlue"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Que 2"
+            android:textStyle="bold"
             android:id="@+id/opt2Que"
+            android:layout_marginTop="50dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="37dp" />
+            android:layout_centerHorizontal="true" />
 
 
     </RelativeLayout>

@@ -22,6 +22,11 @@
     <color name="P5">#56BAEC</color>
     <color name="P6">#ADADEB</color>
 
+
+    <color name="ButtonFront">#8cf9eb</color>
+    <color name="ButtonBack1">#20d2bb</color>
+    <color name="ButtonBack2">#f98da5</color>
+
     <!--<color name="P1">#f64c73</color>-->
     <!--<color name="P2">#20d2bb</color>-->
     <!--<color name="P3">#f98da5</color>-->

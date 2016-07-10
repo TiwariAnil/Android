@@ -21,6 +21,7 @@ public final class GameSettings extends Application {
     public static int ADD_HIGH;
     public static int MUL_LOW;
     public static int MUL_HIGH;
+    public static String SERVER = "http://164.99.140.98:8080/GetPercent";
 
     public static int ADD_STRENGTH;
     public static int SUB_STRENGTH;

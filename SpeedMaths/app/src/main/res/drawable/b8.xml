@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true"
-        style="@style/buttonStyle" >
-
+    <item android:state_pressed="true" >
         <shape>
             <solid
                 android:color="@color/ButtonBack1" />
@@ -18,12 +16,10 @@
                 android:bottom="10dp" />
         </shape>
     </item>
-    <item style="@style/buttonStyle">
+    <item>
         <shape>
-            <gradient
-                android:startColor="#ffead5"
-                android:endColor="#ffc489"
-                android:angle="270" />
+            <solid
+                android:color="#7AD671" />
             <stroke
                 android:width="1dp"
                 android:color="#4aa5d4" />

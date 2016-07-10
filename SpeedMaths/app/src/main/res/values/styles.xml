@@ -5,6 +5,11 @@
         <item name="android:windowBackground">@drawable/dummy_image</item>
     </style>
 
+    <style name="buttonStyle">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

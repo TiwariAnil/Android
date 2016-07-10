@@ -26,7 +26,8 @@
             android:textStyle="bold|italic"
             android:textColor="@color/Red"
             android:id="@+id/LoopT"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="63dp"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -36,8 +37,10 @@
             android:text="0000"
             android:textColor="#48c9b0"
             android:id="@+id/PretimerView"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="58dp"
+            android:layout_below="@+id/LoopT"
+            android:layout_alignRight="@+id/LoopT"
+            android:layout_alignEnd="@+id/LoopT" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dip"
@@ -45,9 +48,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Que 1"
             android:id="@+id/optQue"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp" />
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
         <Button
 
