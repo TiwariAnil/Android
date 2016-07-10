@@ -4,6 +4,7 @@ import android.app.Application;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Created by user on 25-Jun-16.
@@ -50,6 +51,14 @@ public final class GameSettings extends Application {
 
         CurrentFinalScore = CurrentScore * CurrentLevel;
         CurrentFinalScore = CurrentFinalScore + CurrentTimeScore;
+
+    }
+
+    public static int getRandom(int Low, int High){
+        Random r = new Random();
+        int num1 = r.nextInt(High - Low + 1) + Low;
+
+        return num1;
 
     }
 

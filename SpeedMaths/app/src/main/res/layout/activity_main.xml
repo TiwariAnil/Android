@@ -16,7 +16,7 @@
 
         <TextView
             android:text="Make me your habit!"
-            android:id="@+id/textView1"
+            android:id="@+id/TIP"
             android:textSize="20dp"
             android:gravity="center"
             android:background="@drawable/textview_bg"

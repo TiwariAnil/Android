@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.SharedPreferences;
 import android.preference.Preference;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity  {
     private Button strengthBtn;
     private Button showOffBtn;
     private Button aboutUs;
+    private TextView Tip;
 
     private PrefManager prefManager;
     private SharedPreferences SP;
@@ -46,12 +48,14 @@ public class MainActivity extends AppCompatActivity  {
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
 
+        Toast.makeText(MainActivity.this, "Fun!", Toast.LENGTH_SHORT).show();
 //        Toast.makeText(MainActivity.this, "PreScore: " + Integer.toString(GameSettings.PreScore), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(MainActivity.this, "PreTime: " + Integer.toString(GameSettings.PreTime), Toast.LENGTH_SHORT).show();
 
 
         settings = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = settings.edit();
+
 
         if (prefManager.getLEVEL() == -2) {
             if (GameSettings.PreScore == 5) {
@@ -86,7 +90,11 @@ public class MainActivity extends AppCompatActivity  {
         strengthBtn = (Button) findViewById(R.id.strenghtbutton);
         showOffBtn = (Button) findViewById(R.id.showoffbutton);
         aboutUs = (Button) findViewById(R.id.aboutUsbutton);
+        Tip = (TextView) findViewById(R.id.TIP);
 
+        String[] testArray = getResources().getStringArray(R.array.tip);
+
+        Tip.setText(testArray[GameSettings.getRandom(1,10)]);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override

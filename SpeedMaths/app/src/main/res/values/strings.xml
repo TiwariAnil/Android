@@ -42,75 +42,75 @@
     <!--Strings for Win[i], Loose[i], Tip[i]. General[]-->
 
 
-    <!--Tips-->
-    <string name="tip1">Make me your habit!</string>
-    <string name="tip2">Did you try all the games?Levels?</string>
-    <string name="tip3">Step by Step, keep killing!</string>
-    <string name="tip4">Make your brain like IRON!</string>
-    <string name="tip5">23 * 59? Practice till you get it in 1 sec!</string>
-    <string name="tip6">Be self made Usain Bolt in Calculation!</string>
-    <string name="tip7">Want fun? Ask a stranger to play TwoSome!</string>
-    <string name="tip8">Mentally strong people are rare species, be one!</string>
-    <string name="tip9">More you do, More faster you will do ;)!</string>
-    <string name="tip10">TwoSome is awesome ;)!</string>
+    <!--&lt;!&ndash;Tips&ndash;&gt;-->
+    <!--<string name="tip1">Make me your habit!</string>-->
+    <!--<string name="tip2">Did you try all the games?Levels?</string>-->
+    <!--<string name="tip3">Step by Step, keep killing!</string>-->
+    <!--<string name="tip4">Make your brain like IRON!</string>-->
+    <!--<string name="tip5">23 * 59? Practice till you get it in 1 sec!</string>-->
+    <!--<string name="tip6">Be self made Usain Bolt in Calculation!</string>-->
+    <!--<string name="tip7">Want fun? Ask a stranger to play TwoSome!</string>-->
+    <!--<string name="tip8">Mentally strong people are rare species, be one!</string>-->
+    <!--<string name="tip9">More you do, More faster you will do ;)!</string>-->
+    <!--<string name="tip10">TwoSome is awesome ;)!</string>-->
 
-    <!--Winning Moments-->
+    <!--&lt;!&ndash;Winning Moments&ndash;&gt;-->
 
-    <string name="win1">Sir, Could you teach me some calculations?</string>
-    <string name="win2">Seems like, someone is tough to beat!</string>
-    <string name="win3">You Rock. Period!</string>
-    <string name="win4">Wow Wow Wow!</string>
-    <string name="win5">How do you do that?</string>
-    <string name="win6">I would never be able to beat you in TwoSome!</string>
-    <string name="win7">East or West, U r the Player Best!</string>
-    <string name="win8">Day or Night, U know how to fight!</string>
-    <string name="win9">Guide or Rule, U neva loose the cool!</string>
-    <string name="win10">Great going Usain Bolt!</string>
-    <string name="win11">No time &amp; you will be on moon!</string>
-    <string name="win12">Flow like water, Burn like fire!</string>
-    <string name="win13">You are a Brain Machine!</string>
-    <string name="win14">Why don\'t you teach me some maths?</string>
-    <string name="win15">Come on, how can you be this fast?</string>
-    <string name="win16">Great Going!</string>
-    <string name="win17">You are Genius. Period!</string>
-    <string name="win18">You seems to be solving everything. How?</string>
-    <string name="win19">My calculator isn\'t working, Can I borrow your Brain!</string>
-    <string name="win20">I want a Calulator App, just a cloned version of your Brain!</string>
-    <string name="win21">You can replace this App by your brain!</string>
-    <string name="win22">Can I marry your Brian!</string>
-    <string name="win23">I am attracted towards the genius!</string>
-    <string name="win24">Everybody is a genius, maybe not as you!</string>
-    <string name="win25">Stay in 99 percentile!</string>
+    <!--<string name="win1">Sir, Could you teach me some calculations?</string>-->
+    <!--<string name="win2">Seems like, someone is tough to beat!</string>-->
+    <!--<string name="win3">You Rock. Period!</string>-->
+    <!--<string name="win4">Wow Wow Wow!</string>-->
+    <!--<string name="win5">How do you do that?</string>-->
+    <!--<string name="win6">I would never be able to beat you in TwoSome!</string>-->
+    <!--<string name="win7">East or West, U r the Player Best!</string>-->
+    <!--<string name="win8">Day or Night, U know how to fight!</string>-->
+    <!--<string name="win9">Guide or Rule, U neva loose the cool!</string>-->
+    <!--<string name="win10">Great going Usain Bolt!</string>-->
+    <!--<string name="win11">No time &amp; you will be on moon!</string>-->
+    <!--<string name="win12">Flow like water, Burn like fire!</string>-->
+    <!--<string name="win13">You are a Brain Machine!</string>-->
+    <!--<string name="win14">Why don\'t you teach me some maths?</string>-->
+    <!--<string name="win15">Come on, how can you be this fast?</string>-->
+    <!--<string name="win16">Great Going!</string>-->
+    <!--<string name="win17">You are Genius. Period!</string>-->
+    <!--<string name="win18">You seems to be solving everything. How?</string>-->
+    <!--<string name="win19">My calculator isn\'t working, Can I borrow your Brain!</string>-->
+    <!--<string name="win20">I want a Calulator App, just a cloned version of your Brain!</string>-->
+    <!--<string name="win21">You can replace this App by your brain!</string>-->
+    <!--<string name="win22">Can I marry your Brian!</string>-->
+    <!--<string name="win23">I am attracted towards the genius!</string>-->
+    <!--<string name="win24">Everybody is a genius, maybe not as you!</string>-->
+    <!--<string name="win25">Stay in 99 percentile!</string>-->
 
 
 
-    <!--Loosing Moments-->
+    <!--&lt;!&ndash;Loosing Moments&ndash;&gt;-->
 
-    <string name="loss1">Ships are not made in 1 day!</string>
-    <string name="loss2">Fight back! Get Full/Full!</string>
-    <string name="loss3">Sometimes shit happens! :D</string>
-    <string name="loss4">You can\'t play like this. </string>
-    <string name="loss5">I think this app is not working fine.</string>
-    <string name="loss6">Day or Night, keep on the Fight!</string>
-    <string name="loss7">East or West, practice before you Rest!</string>
-    <string name="loss8">Nobody becomes an expert in one day!</string>
-    <string name="loss9">Fun is to fight back!</string>
-    <string name="loss10">Get some winning shots ;)!</string>
-    <string name="loss11">You acted or am I dreaming? </string>
-    <string name="loss12">I don\'t get this much also!</string>
-    <string name="loss13">Keep playing for a week, non-stop!</string>
-    <string name="loss14">Cheese or Butter?</string>
-    <string name="loss15">I hate low scores, please get me a good one!</string>
-    <string name="loss16">I, kind of, not worried about you. coz U will do! </string>
-    <string name="loss17">I trust you!</string>
-    <string name="loss18">Stay calm, I can present same test 100 times!</string>
-    <string name="loss19">Fun isn\'t over! get the same score again ;)</string>
-    <string name="loss20">Ramanujan wouldn\'t have scored this!</string>
-    <string name="loss21">At your father\'s time, I wasn\'t even born!</string>
-    <string name="loss22">Can\'t we play again? </string>
-    <string name="loss23">Run like Milkha Singh! You will win!</string>
-    <string name="loss24">Sachin doesn\'t score a Ton in every match!</string>
-    <string name="loss25">Chill, It\'s just a stupid game!</string>
+    <!--<string name="loss1">Ships are not made in 1 day!</string>-->
+    <!--<string name="loss2">Fight back! Get Full/Full!</string>-->
+    <!--<string name="loss3">Sometimes shit happens! :D</string>-->
+    <!--<string name="loss4">You can\'t play like this. </string>-->
+    <!--<string name="loss5">I think this app is not working fine.</string>-->
+    <!--<string name="loss6">Day or Night, keep on the Fight!</string>-->
+    <!--<string name="loss7">East or West, practice before you Rest!</string>-->
+    <!--<string name="loss8">Nobody becomes an expert in one day!</string>-->
+    <!--<string name="loss9">Fun is to fight back!</string>-->
+    <!--<string name="loss10">Get some winning shots ;)!</string>-->
+    <!--<string name="loss11">You acted or am I dreaming? </string>-->
+    <!--<string name="loss12">I don\'t get this much also!</string>-->
+    <!--<string name="loss13">Keep playing for a week, non-stop!</string>-->
+    <!--<string name="loss14">Cheese or Butter?</string>-->
+    <!--<string name="loss15">I hate low scores, please get me a good one!</string>-->
+    <!--<string name="loss16">I, kind of, not worried about you. coz U will do! </string>-->
+    <!--<string name="loss17">I trust you!</string>-->
+    <!--<string name="loss18">Stay calm, I can present same test 100 times!</string>-->
+    <!--<string name="loss19">Fun isn\'t over! get the same score again ;)</string>-->
+    <!--<string name="loss20">Ramanujan wouldn\'t have scored this!</string>-->
+    <!--<string name="loss21">At your father\'s time, I wasn\'t even born!</string>-->
+    <!--<string name="loss22">Can\'t we play again? </string>-->
+    <!--<string name="loss23">Run like Milkha Singh! You will win!</string>-->
+    <!--<string name="loss24">Sachin doesn\'t score a Ton in every match!</string>-->
+    <!--<string name="loss25">Chill, It\'s just a stupid game!</string>-->
 
 
 

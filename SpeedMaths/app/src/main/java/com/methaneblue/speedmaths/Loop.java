@@ -102,15 +102,15 @@ public class Loop extends Activity {
         th = new Thread(new Runnable() {
             public void run() {
                 genNextSet();
-                while (progressStatus < 100 && LOOP) {
-                    progressStatus += 1;
+                while (progressStatus > 0 && LOOP) {
+                    progressStatus -= 1;
                     // Update the progress bar and display the
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
                             circleProgress.setProgress(progressStatus);
                             progressBar.setProgress(progressStatus);
-                            textView.setText(progressStatus+"/"+progressBar.getMax());
+                            textView.setText(Integer.toString(progressStatus));
 //                            It works hee as well!!
 //                            QueView.setText(Que);
                         }
@@ -131,7 +131,7 @@ public class Loop extends Activity {
                         e.printStackTrace();
                     }
                 }
-                progressStatus = 0;
+                progressStatus = 100;
 
                 Progress(numberOfRuns - 1);
             }

@@ -8,29 +8,28 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textAlignment="center"
         android:text="New Text"
         android:id="@+id/instruction"
-        android:textColor="#C0392B"
+        android:textColor="@color/DarkBlue"
         android:typeface="monospace"
         android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp" />
+        android:background="@drawable/textview_bg"
+        android:layout_above="@+id/textView1"
+        android:layout_marginBottom="116dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/progressBar1"
         android:textColor="#C0392B"
         android:typeface="monospace"
         android:textStyle="bold"
-        android:layout_alignLeft="@+id/progressBar1"
-        android:layout_alignStart="@+id/progressBar1"
-        android:layout_alignRight="@+id/progressBar1"
-        android:layout_alignEnd="@+id/progressBar1" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 
     <ProgressBar
@@ -43,16 +42,17 @@
         android:minHeight="50dip"
         android:minWidth="200dip"
         android:progress="1"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/circle_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp" />
 
     <com.github.lzyzsd.circleprogress.CircleProgress
         android:id="@+id/circle_progress"
         android:layout_width="100dp"
         android:layout_height="100dp"
         custom:circle_progress="20"
-        android:layout_below="@+id/progressBar1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="76dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/instruction"
+        android:layout_alignEnd="@+id/instruction" />
 
 </RelativeLayout>

@@ -21,6 +21,7 @@ public class LOOP_OVER extends AppCompatActivity {
     private Button checkB;
     private String userAns;
     private StrengthUpdater strengthUpdate;
+    private String [] testArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,6 @@ public class LOOP_OVER extends AppCompatActivity {
         checkB = (Button) findViewById(R.id.check);
         msgV = (TextView) findViewById(R.id.msgView);
         correctV = (TextView) findViewById(R.id.correctView);
-
 
         inputText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,13 +55,17 @@ public class LOOP_OVER extends AppCompatActivity {
                 checkB.setVisibility(View.GONE);
                 if( inputText.length() <= 0){
                     Toast.makeText(LOOP_OVER.this, "Please Enter your answer!", Toast.LENGTH_SHORT).show();
+
                 }else if(answer == Integer.parseInt(inputText.getText().toString()) ){
-                    msgV.setText("I can just say, You are Awesome!");
+                    testArray = getResources().getStringArray(R.array.win);
+                    msgV.setText(testArray[GameSettings.getRandom(1,26)]);
 
                 }else {
-                    msgV.setText("That's not what Ramanujan will answer!");
+                    testArray = getResources().getStringArray(R.array.loss);
+                    msgV.setText(testArray[GameSettings.getRandom(1,26)]);
                     correctV.setText("Answer : "+Integer.toString(answer));
                     correctV.setVisibility(View.VISIBLE);
+
                 }
                 strengthUpdate.UpdateStrength();
                 msgV.setVisibility(View.VISIBLE);

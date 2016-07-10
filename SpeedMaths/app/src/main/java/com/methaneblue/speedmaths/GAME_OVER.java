@@ -17,7 +17,7 @@ public class GAME_OVER extends Activity {
     private TextView scoreV;
     private float score, total, percent;
     private int type;
-
+    private String[] testArray;
     private StrengthUpdater strengthUpdate;
 
     @Override
@@ -44,13 +44,16 @@ public class GAME_OVER extends Activity {
 //        scoreV.setText(Integer.toString((int)score)+"/"+Integer.toString((int)total));;
         scoreV.setText(Integer.toString(GameSettings.CurrentFinalScore)+"/"+Integer.toString(GameSettings.CurrentTotalScore));
         if( percent > 90.0 ){
-            msgV.setText("I can just say, You are Awesome!");
-
-        }else if( percent > 60.0 ){
-            msgV.setText("Good going, keep crushing it!");
+            testArray = getResources().getStringArray(R.array.win);
+            msgV.setText(testArray[GameSettings.getRandom(1,26)]);
 
         }else {
-            msgV.setText("Don't worry, I am there!");
+//        if( percent > 60.0 ){
+//            msgV.setText("Good going, keep crushing it!");
+//
+//        }else {
+            testArray = getResources().getStringArray(R.array.loss);
+            msgV.setText(testArray[GameSettings.getRandom(1,26)]);
         }
     }
 
