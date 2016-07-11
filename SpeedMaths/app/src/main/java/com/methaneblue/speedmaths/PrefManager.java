@@ -18,19 +18,94 @@ public class PrefManager {
     // Shared preferences file name
     private static final String PREF_NAME = "speedmaths-welcome";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
+
     private static final String addSTRENGTH = "addSTRENGTH"; //ADD
     private static final String mulSTRENGTH = "mulSTRENGTH"; //MULTIPLY
     private static final String mixedSTRENGTH = "mixedSTRENGTH"; //EQUATIONs
     private static final String loopSTRENGTH = "loopSTRENGTH";  // MEMORY
     private static final String duelSTRENGTH = "duelSTRENGTH"; // ANYTHING
+    private static final String perSTRENGTH = "perSTRENGTH";
+
     private static final String speedSTRENGTH = "speedSTRENGTH"; //
     private static final String accuracySTRENGTH = "accuracySTRENGTH";
-    private static final String perSTRENGTH = "perSTRENGTH";
 
     private static final String userRANK = "userRANK";
     private static final String totalUSERS = "totalUSERS";
 
     private static final String LEVEL = "LEVEL";
+
+    private static final String addLEVEL = "addLEVEL";
+    private static final String mulLEVEL = "mulLEVEL";
+    private static final String mixedLEVEL = "mixedLEVEL";
+    private static final String loopLEVEL = "loopLEVEL";
+    private static final String duelLEVEL = "duelLEVEL";
+//    private static final String L = "";
+
+
+
+    public  int getUserRANK() {
+        return pref.getInt(userRANK, 1);
+    }
+
+    public  int getTotalUSERS() {
+        return pref.getInt(totalUSERS, 1);
+    }
+
+    public  String getAddLEVEL() {
+        return pref.getString(addLEVEL, "1");
+    }
+
+    public  String getMulLEVEL() {
+        return pref.getString(mulLEVEL, "1");
+    }
+
+    public  String getMixedLEVEL() {
+        return pref.getString(mixedLEVEL, "1");
+    }
+
+    public  String getLoopLEVEL() {
+        return pref.getString(loopLEVEL, "1");
+    }
+
+    public  String getDuelLEVEL() {
+        return pref.getString(duelLEVEL, "1");
+    }
+    /////////
+    public void setUserRANK(int level) {
+        editor.putInt(userRANK, level);
+        editor.commit();
+    }
+
+    public void setTotalUSERS(int level) {
+        editor.putInt(totalUSERS, level);
+        editor.commit();
+    }
+
+    public void setAddLEVEL(String x) {
+        editor.putString(addLEVEL, x);
+        editor.commit();
+    }
+
+    public void setMulLEVEL(String x) {
+        editor.putString(mulLEVEL, x);
+        editor.commit();
+    }
+
+    public void setMixedLEVEL(String x) {
+        editor.putString(mixedLEVEL, x);
+        editor.commit();
+    }
+
+    public void setLoopLEVEL(String x) {
+        editor.putString(loopLEVEL, x);
+        editor.commit();
+    }
+
+
+    public void setDuelLEVEL(String x) {
+        editor.putString(duelLEVEL, x);
+        editor.commit();
+    }
 
     // Constructor
     public PrefManager(Context context) {

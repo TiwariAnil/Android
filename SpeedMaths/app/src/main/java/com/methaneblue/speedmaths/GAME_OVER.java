@@ -37,7 +37,6 @@ public class GAME_OVER extends Activity {
         strengthUpdate = new StrengthUpdater(GAME_OVER.this);
         strengthUpdate.UpdateStrength();
 
-//        scoreV.setText(Integer.toString((int)score)+"/"+Integer.toString((int)total));;
         scoreV.setText(Integer.toString(GameSettings.CurrentFinalScore)+"/"+Integer.toString(GameSettings.CurrentTotalScore));
         if( percent >= 90 ){
             testArray = getResources().getStringArray(R.array.win);

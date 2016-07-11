@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        prefManager = new PrefManager(this);
+        prefManager = new PrefManager(getBaseContext());
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
 
@@ -62,8 +62,10 @@ public class MainActivity extends AppCompatActivity  {
                 if (GameSettings.PreTime < 25) {
 
                     Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
-                    editor.putString("addType","3");
-                    editor.putString("mulType","2");
+//                    prefManager.setAddLEVEL("3");
+//                    prefManager.setMulLEVEL("2");
+                    editor.putString("addLEVEL","3");
+                    editor.putString("mulLEVEL","2");
                     editor.commit();
 
                 }
@@ -71,7 +73,8 @@ public class MainActivity extends AppCompatActivity  {
                 if (GameSettings.PreTime < 30) {
                     Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
 
-                    editor.putString("addType","2");
+//                    prefManager.setAddLEVEL("2");
+                    editor.putString("addLEVEL","2");
                     editor.commit();
                 }
             } else {
@@ -100,7 +103,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                GameSettings.init(Integer.parseInt(SP.getString("addType", "1").toString()));
+                GameSettings.init(Integer.parseInt(prefManager.getAddLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Add.class);
                 startActivity(i);
             }
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                GameSettings.init(Integer.parseInt(SP.getString("mulType", "1").toString()));
+                GameSettings.init(Integer.parseInt(prefManager.getMulLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Multi.class);
                 startActivity(i);
             }
@@ -120,7 +123,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                GameSettings.init(Integer.parseInt(SP.getString("mixedType", "1").toString()));
+                GameSettings.init(Integer.parseInt(prefManager.getMixedLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Mixed.class);
                 startActivity(i);
             }
@@ -130,7 +133,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                GameSettings.init(Integer.parseInt(SP.getString("loopType", "1").toString()));
+                GameSettings.init(Integer.parseInt(prefManager.getLoopLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Loop.class);
                 startActivity(i);
             }
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                GameSettings.init(Integer.parseInt(SP.getString("duelType", "1").toString()));
+                GameSettings.init(Integer.parseInt(prefManager.getDuelLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Duel.class);
                 startActivity(i);
             }

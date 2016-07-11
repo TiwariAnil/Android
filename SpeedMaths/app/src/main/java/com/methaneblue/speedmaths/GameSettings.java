@@ -14,8 +14,8 @@ public final class GameSettings extends Application {
     public static int TimeMax;
     public static int RESISTANCE;
     public static int QUE_TOTAL;
-    public static int QUE_TOTAL_DUEL=10;
-    public static int QUE_TOTAL_PRETEST=5;
+    public static int QUE_TOTAL_DUEL = 10;
+    public static int QUE_TOTAL_PRETEST = 5;
     public static int TIME_PRETEST = 11000;
 
     public static int ADD_LOW;
@@ -26,11 +26,6 @@ public final class GameSettings extends Application {
 
     public static String SERVER = "http://164.99.140.98:8080/GetPer";
 //    public static String SERVER = "http://192.168.1.9:8080/GetPer";
-
-    public static int ADD_STRENGTH;
-    public static int SUB_STRENGTH;
-    public static int MUL_STRENGTH;
-    public static int DIV_STRENGTH;
 
     public static int winQuotes = 26;
     public static int loosQuotes = 25;
@@ -47,7 +42,7 @@ public final class GameSettings extends Application {
     public static int CurrentTotalScore;
     public static int CurrentType;
 
-    public static void ComputeScore(){
+    public static void ComputeScore() {
 
         int total = QUE_TOTAL * CurrentLevel;
 
@@ -60,7 +55,7 @@ public final class GameSettings extends Application {
 
     }
 
-    public static int getRandom(int Low, int High){
+    public static int getRandom(int Low, int High) {
         Random r = new Random();
         int num1 = r.nextInt(High - Low + 1) + Low;
 
@@ -68,10 +63,10 @@ public final class GameSettings extends Application {
 
     }
 
-    public static void init(int level){
+    public static void init(int level) {
 
         // Testing LEVEL
-        if( level == -1){
+        if (level == -1) {
             RESISTANCE = 1;
             ADD_LOW = 1;
             ADD_HIGH = 10;
@@ -85,7 +80,7 @@ public final class GameSettings extends Application {
 
         }
         //LEVEL 1
-        if( level == 1){
+        if (level == 1) {
             RESISTANCE = 1;
             ADD_LOW = 1;
             ADD_HIGH = 10;
@@ -95,7 +90,7 @@ public final class GameSettings extends Application {
             TimeMax = 6000;
             CurrentTotalScore = 10;
 
-        }else if( level == 2) {
+        } else if (level == 2) {
             RESISTANCE = 1;
             ADD_LOW = 1;
             ADD_HIGH = 10;
@@ -105,7 +100,7 @@ public final class GameSettings extends Application {
             TimeMax = 6000;
             CurrentTotalScore = 20;
 
-        }else if (level == 3){
+        } else if (level == 3) {
             RESISTANCE = 2;
             ADD_LOW = 10;
             ADD_HIGH = 100;
@@ -114,7 +109,7 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 10;
             TimeMax = 11000;
             CurrentTotalScore = 30;
-        }else if (level == 4){
+        } else if (level == 4) {
             RESISTANCE = 2;
             ADD_LOW = 10;
             ADD_HIGH = 100;
@@ -123,7 +118,7 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 20;
             TimeMax = 6000;
             CurrentTotalScore = 40;
-        }else if (level == 5){
+        } else if (level == 5) {
             RESISTANCE = 3;
             ADD_LOW = 100;
             ADD_HIGH = 1000;
@@ -132,7 +127,7 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 10;
             TimeMax = 11000;
             CurrentTotalScore = 50;
-        }else if (level == 6){
+        } else if (level == 6) {
             RESISTANCE = 3;
             ADD_LOW = 100;
             ADD_HIGH = 1000;
@@ -144,7 +139,7 @@ public final class GameSettings extends Application {
         }
 
         CurrentLevel = level;
-        CurrentTimeLimit = TimeMax/2000;
+        CurrentTimeLimit = TimeMax / 2000;
     }
 
     public static int myMax(int x, int y) {

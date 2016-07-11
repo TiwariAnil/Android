@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+import java.util.logging.Handler;
 
 public class Add extends Activity {
 
@@ -26,6 +27,7 @@ public class Add extends Activity {
     private int score, total;
     private CountDownTimer Ctimer;
     private int CurrTime, totalTime;
+    private android.os.Handler handler = new android.os.Handler();
 
     PrefManager prefManager;
 
@@ -38,8 +40,14 @@ public class Add extends Activity {
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         prefManager = new PrefManager(this);
 
-        Toast.makeText(Add.this, "Game Level : " + SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT).show();
-
+        final Toast toast = Toast.makeText(Add.this, "Level: "+SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT);
+        toast.show();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 500);
 
         totalTime = 0;
         CurrTime = 0;
