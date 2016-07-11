@@ -16,20 +16,21 @@
         android:textAlignment="center"
         android:text="New Text"
         android:id="@+id/msgView"
-        android:textColor="#C0392B"
+        android:textColor="@color/Red"
         android:typeface="monospace"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
+        android:layout_marginTop="148dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="You Performance Score"
-        android:id="@+id/textView3"
-        android:layout_above="@+id/scoreView"
         android:layout_centerHorizontal="true" />
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+        <!--android:text="You Performance Score"-->
+        <!--android:id="@+id/textView3"-->
+        <!--android:layout_above="@+id/scoreView"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,8 +39,10 @@
         android:text="Large Text"
         android:id="@+id/scoreView"
         android:textStyle="bold"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/Green"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="166dp" />
 
 
 </RelativeLayout>

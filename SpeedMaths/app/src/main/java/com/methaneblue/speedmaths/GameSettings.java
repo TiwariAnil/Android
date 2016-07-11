@@ -22,13 +22,19 @@ public final class GameSettings extends Application {
     public static int ADD_HIGH;
     public static int MUL_LOW;
     public static int MUL_HIGH;
-    public static String SERVER = "http://164.99.140.98:8080/GetPercent";
+
+
+    public static String SERVER = "http://164.99.140.98:8080/GetPer";
+//    public static String SERVER = "http://192.168.1.9:8080/GetPer";
 
     public static int ADD_STRENGTH;
     public static int SUB_STRENGTH;
     public static int MUL_STRENGTH;
     public static int DIV_STRENGTH;
 
+    public static int winQuotes = 26;
+    public static int loosQuotes = 25;
+    public static int tipQuotes = 11;
 
     public static int PreScore;
     public static int PreTime;
@@ -63,11 +69,6 @@ public final class GameSettings extends Application {
     }
 
     public static void init(int level){
-
-        CurrentLevel = level;
-
-
-        CurrentTimeLimit = TimeMax/2000;
 
         // Testing LEVEL
         if( level == -1){
@@ -141,6 +142,9 @@ public final class GameSettings extends Application {
             TimeMax = 6000;
             CurrentTotalScore = 60;
         }
+
+        CurrentLevel = level;
+        CurrentTimeLimit = TimeMax/2000;
     }
 
     public static int myMax(int x, int y) {

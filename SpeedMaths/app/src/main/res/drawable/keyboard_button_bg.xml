@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" android:exitFadeDuration="@android:integer/config_shortAnimTime">
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="#dddddd"/>
+            <solid android:color="#fafafa"/>
         </shape>
     </item>
     <item android:state_pressed="false">

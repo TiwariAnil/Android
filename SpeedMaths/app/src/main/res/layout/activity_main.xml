@@ -19,7 +19,6 @@
             android:id="@+id/TIP"
             android:textSize="20dp"
             android:gravity="center"
-            android:background="@drawable/textview_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#C0392B"
@@ -49,7 +48,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+ &amp; -"
-            android:textStyle="bold"
             android:id="@+id/addbutton"/>
 
         <Button
@@ -63,7 +61,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="x &amp; /"
-            android:textStyle="bold"
             android:id="@+id/mulbutton"/>
 
         <Button
@@ -78,7 +75,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Equations"
-            android:textStyle="bold"
             android:id="@+id/mixdbutton"      />
     </LinearLayout>
 
@@ -97,8 +93,7 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Looop"
-            android:textStyle="bold"
+            android:text="Lo()op"
             android:id="@+id/loopbutton"
             />
 
@@ -112,7 +107,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="TwoSome"
-            android:textStyle="bold"
             android:id="@+id/duelbutton"
             />
 
@@ -126,7 +120,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Strengths"
-            android:textStyle="bold"
             android:id="@+id/strenghtbutton"
             />
     </LinearLayout>
@@ -147,7 +140,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Cheat"
-            android:textStyle="bold"
             android:id="@+id/showoffbutton"
             />
 
@@ -161,7 +153,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Settings"
-            android:textStyle="bold"
             android:id="@+id/settingsbutton"
             />
 
@@ -175,7 +166,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="About"
-            android:textStyle="bold"
             android:id="@+id/aboutUsbutton"
             />
     </LinearLayout>

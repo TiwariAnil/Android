@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity  {
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
 
-        Toast.makeText(MainActivity.this, "Fun!", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "Fun!", Toast.LENGTH_SHORT).show();
 //        Toast.makeText(MainActivity.this, "PreScore: " + Integer.toString(GameSettings.PreScore), Toast.LENGTH_SHORT).show();
 //        Toast.makeText(MainActivity.this, "PreTime: " + Integer.toString(GameSettings.PreTime), Toast.LENGTH_SHORT).show();
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity  {
 
         String[] testArray = getResources().getStringArray(R.array.tip);
 
-        Tip.setText(testArray[GameSettings.getRandom(1,10)]);
+        Tip.setText(testArray[GameSettings.getRandom(1,GameSettings.tipQuotes)-1]);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,8 +178,8 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-//                Intent i = new Intent(MainActivity.this, About.class);
-                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
+                Intent i = new Intent(MainActivity.this, About.class);
+//                Intent i = new Intent(MainActivity.this, TrialRoomActivity.class);
                 startActivity(i);
             }
         });

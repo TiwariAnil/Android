@@ -58,11 +58,11 @@ public class LOOP_OVER extends AppCompatActivity {
 
                 }else if(answer == Integer.parseInt(inputText.getText().toString()) ){
                     testArray = getResources().getStringArray(R.array.win);
-                    msgV.setText(testArray[GameSettings.getRandom(1,26)]);
+                    msgV.setText(testArray[GameSettings.getRandom(1,GameSettings.winQuotes)-1]);
 
                 }else {
                     testArray = getResources().getStringArray(R.array.loss);
-                    msgV.setText(testArray[GameSettings.getRandom(1,26)]);
+                    msgV.setText(testArray[GameSettings.getRandom(1,GameSettings.loosQuotes)-1]);
                     correctV.setText("Answer : "+Integer.toString(answer));
                     correctV.setVisibility(View.VISIBLE);
 

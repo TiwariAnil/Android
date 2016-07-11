@@ -89,11 +89,7 @@ public class Add extends Activity {
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));
         if(total == GameSettings.QUE_TOTAL){
             Intent myIntent = new Intent(Add.this, GAME_OVER.class);
-//            myIntent.putExtra("score",score);
-//            myIntent.putExtra("type",1);
             GameSettings.CurrentScore = score;
-//            GameSettings.CurrentTimeScore =
-//            Ctimer.cancel();
             startActivity(myIntent);
             finish();
         }
@@ -129,6 +125,7 @@ public class Add extends Activity {
                 TimerField.setText("" + millisUntilFinished / 1000);
                 CurrTime = (GameSettings.TimeMax/1000) - (int) (millisUntilFinished / 1000);
             }
+
             public void onFinish() {
                 CurrTime = 0;
                 genNextSet();

@@ -19,16 +19,16 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        Element adsElement = new Element();
-        adsElement.setTitle("Advertise with us");
+//        Element adsElement = new Element();
+//        adsElement.setTitle("Advertise with us");
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
                 .setImage(R.drawable.dummy_image)
                 .setDescription(getString(R.string.about_page_description))
                 .addItem(new Element().setTitle("Version 2.1"))
-                .addItem(adsElement)
-                .addGroup("Connect with us")
+//                .addItem(adsElement)
+//                .addGroup("Connect with us")
                 .addEmail("Intel.Maths.Pro@gmail.com")
 //                .addWebsite("http://.github.io/")
                 .addFacebook("Mr.A.is.here")

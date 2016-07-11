@@ -14,11 +14,11 @@
 
 
         <TextView
-            android:id="@+id/RankView"
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Your rank is 1 out of 1!"
+            android:text="Progress Card!"
             android:textColor="@color/Red"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
@@ -37,7 +37,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
             <Button
                 android:id="@+id/PercentileT"
@@ -60,12 +59,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"/>
 
-
-
         </RelativeLayout>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,7 +92,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 custom:circle_progress="-20"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
@@ -132,9 +128,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 custom:circle_progress="-20"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
 
         </RelativeLayout>
     </LinearLayout>
@@ -168,9 +163,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 custom:circle_progress="-20"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"/>
 
         </RelativeLayout>
     </LinearLayout>
@@ -203,9 +197,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 custom:circle_progress="-20"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
 
 
 

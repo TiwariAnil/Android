@@ -19,18 +19,15 @@ public class GAME_OVER_DUEL extends Activity {
     private TextView [] scoreV = new TextView[2];
     Intent myIntent;
 
-    private RelativeLayout RelOp1, RelOp2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game__over__duel);
 
-//        opLayout[0] = (RelativeLayout) findViewById(R.id.opponentOVER0);
-//        opLayout[1] = (RelativeLayout) findViewById(R.id.opponentOVER1);
+        opLayout[0] = (RelativeLayout) findViewById(R.id.opponentOVER0);
+        opLayout[1] = (RelativeLayout) findViewById(R.id.opponentOVER1);
 
-        RelOp1 = (RelativeLayout) findViewById(R.id.opponentOVER0);
-        RelOp2 = (RelativeLayout) findViewById(R.id.opponentOVER1);
 
         opV[0] = (View) findViewById(R.id.emptyview1);
         opV[1] = (View) findViewById(R.id.emptyview2);
@@ -46,17 +43,11 @@ public class GAME_OVER_DUEL extends Activity {
         int winner;
         if( score[0] > score[1]) {
             winner = 0;
-            RelOp1.setBackground(getResources().getDrawable(R.color.Green));
+            opLayout[0].setBackground(getResources().getDrawable(R.color.Green));
         }else {
             winner = 1;
-            RelOp2.setBackground(getResources().getDrawable(R.color.Green));
+            opLayout[1].setBackground(getResources().getDrawable(R.color.Green));
         }
-//        opVV[winner].setBackgroundColor(0x00CC33);
-
-//        opVV[winner].setBackgroundColor(Color.parseColor("#1F9A43"));
-
-//        opLayout[1].setBackgroundColor(0x00CC33);
-//        opLayout[0].setBackgroundColor(23);
 
         scoreV[0] = (TextView) findViewById(R.id.op0Score0);
         scoreV[1] = (TextView) findViewById(R.id.op1Score1);

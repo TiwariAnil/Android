@@ -25,7 +25,10 @@ public class PrefManager {
     private static final String duelSTRENGTH = "duelSTRENGTH"; // ANYTHING
     private static final String speedSTRENGTH = "speedSTRENGTH"; //
     private static final String accuracySTRENGTH = "accuracySTRENGTH";
-    private static final String percentSTRENGTH = "percentSTRENGTH";
+    private static final String perSTRENGTH = "perSTRENGTH";
+
+    private static final String userRANK = "userRANK";
+    private static final String totalUSERS = "totalUSERS";
 
     private static final String LEVEL = "LEVEL";
 
@@ -59,8 +62,9 @@ public class PrefManager {
     public Float getAccuracySTRENGTH() {
         return pref.getFloat(accuracySTRENGTH, 1);
     }
-    public Float getPercentSTRENGTH() {
-        return pref.getFloat(percentSTRENGTH, 1);
+
+    public Float getPerSTRENGTH() {
+        return pref.getFloat(perSTRENGTH, 1);
     }
 
     public void setAddSTRENGTH(Float level) {
@@ -98,8 +102,8 @@ public class PrefManager {
         editor.commit();
     }
 
-    public void setPercentSTRENGTH(Float level) {
-        editor.putFloat(percentSTRENGTH, level);
+    public void setPerSTRENGTH(Float level) {
+        editor.putFloat(perSTRENGTH, level);
         editor.commit();
     }
 

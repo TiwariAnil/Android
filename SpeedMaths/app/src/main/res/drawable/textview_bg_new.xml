@@ -11,11 +11,11 @@
 
     <stroke
         android:width="1dp"
-        android:color="#b6b6b6" />
+        android:color="#6dd5ff" />
 
-    <solid android:color="#6dd5ff" />
+    <solid android:color="@color/P3" />
     <padding android:bottom="5dp"
-             android:left="5dp"
+        android:left="5dp"
         android:right="5dp"
         android:top="5dp"></padding>
 </shape>

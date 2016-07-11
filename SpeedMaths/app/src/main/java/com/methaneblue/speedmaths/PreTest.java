@@ -191,8 +191,8 @@ public class PreTest extends Activity {
         Ctimer = new CountDownTimer(GameSettings.TIME_PRETEST, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                TimerView.setText("t = " + millisUntilFinished / 1000);
-                CurrentTime = 11- (int)(millisUntilFinished / 1000);
+                TimerView.setText("" + millisUntilFinished / 1000);
+                CurrentTime = (GameSettings.TIME_PRETEST/1000)- (int)(millisUntilFinished / 1000);
                 isRunning = true;
             }
 

@@ -10,22 +10,22 @@
         android:rotation="180"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
+
         <View
             android:id="@+id/emptyview1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="You Final Score"
-            android:id="@+id/op0View0"
-            android:layout_above="@+id/op0Score0"
-            android:layout_centerHorizontal="true" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:text="You Final Score"-->
+            <!--android:id="@+id/op0View0"-->
+            <!--android:layout_above="@+id/op0Score0"-->
+            <!--android:layout_centerHorizontal="true" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,22 +43,22 @@
         android:id="@+id/opponentOVER1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
+
         <View
             android:id="@+id/emptyview2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="You Final Score"
-            android:id="@+id/op1View1"
-            android:layout_above="@+id/op1Score1"
-            android:layout_centerHorizontal="true" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:text="You Final Score"-->
+            <!--android:id="@+id/op1View1"-->
+            <!--android:layout_above="@+id/op1Score1"-->
+            <!--android:layout_centerHorizontal="true" />-->
 
         <TextView
             android:layout_width="wrap_content"

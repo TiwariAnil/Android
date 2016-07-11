@@ -90,8 +90,6 @@ public class Multi extends Activity {
         ScoreView.setText(Integer.toString(score) + "/" + Integer.toString(total));
         if(total == GameSettings.QUE_TOTAL){
             Intent myIntent = new Intent(Multi.this, GAME_OVER.class);
-//            myIntent.putExtra("score",score);
-//            myIntent.putExtra("type",1);
             GameSettings.CurrentScore = score;
             startActivity(myIntent);
             finish();

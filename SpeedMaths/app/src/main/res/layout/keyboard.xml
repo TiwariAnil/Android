@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="#eeeeee"
+        android:textColor="#2f2f2f"
         android:enabled="false"
         android:minHeight="48dp"
         android:paddingLeft="8dp"
