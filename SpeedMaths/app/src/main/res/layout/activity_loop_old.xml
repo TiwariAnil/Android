@@ -15,9 +15,21 @@
         android:textColor="@color/DarkBlue"
         android:typeface="monospace"
         android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="145dp" />
+        android:layout_above="@+id/textView1"
+        android:layout_marginBottom="116dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#C0392B"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -29,9 +41,17 @@
         android:minHeight="50dip"
         android:minWidth="200dip"
         android:progress="1"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/circle_progress"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="159dp" />
+        android:layout_marginBottom="75dp" />
 
+    <com.github.lzyzsd.circleprogress.CircleProgress
+        android:id="@+id/circle_progress"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        custom:circle_progress="20"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/instruction"
+        android:layout_alignEnd="@+id/instruction" />
 
 </RelativeLayout>

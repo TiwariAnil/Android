@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">SpeedMaths</string>
+    <string name="app_name">Maths for All</string>
     <string name="action_settings">Settings</string>
     <string name="copy_right">Copyrights © %1$d</string>
-    <string name="about_page_description">Maths is fun. Open app. Play games. See strengths. Track percentile. Improve. Feel good. Repeat.</string>
+    <string name="about_page_description">You be a 6 or 60, Basic Maths is always a fun. Open the app. Play games. See strengths. Track rank. Improve. Feel good. Repeat.</string>
 
     <string name="number_zero">0</string>
     <string name="number_one">1</string>
@@ -27,13 +27,13 @@
     <string name="slide_1_desc">Play cool calculation games alone and with a partner.</string>
 
     <string name="slide_2_title">Your Maths!</string>
-    <string name="slide_2_desc">We tell your strengths and help you identify your shortcomings.</string>
+    <string name="slide_2_desc">App tells about your strengths and help you identify your shortcomings.</string>
 
     <string name="slide_3_title">Improve Smartly!</string>
-    <string name="slide_3_desc">We help you to work on your weakness and improve overall.</string>
+    <string name="slide_3_desc">App helps you to work on your weakness and improve overall.</string>
 
     <string name="slide_4_title">World Percentile!</string>
-    <string name="slide_4_desc">We give your rank in terms of percentile among all our users across the globe.</string>
+    <string name="slide_4_desc">You will get overall rank in and percentile among all the user of this app across the globe.</string>
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
@@ -111,7 +111,5 @@
     <!--<string name="loss23">Run like Milkha Singh! You will win!</string>-->
     <!--<string name="loss24">Sachin doesn\'t score a Ton in every match!</string>-->
     <!--<string name="loss25">Chill, It\'s just a stupid game!</string>-->
-
-
 
 </resources>

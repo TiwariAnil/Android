@@ -34,17 +34,18 @@ public class Strengths extends AppCompatActivity {
     private CircleProgress CpercentBar, CaddBar, CmulBar, CmixedBar, CloopBar;
     private CircleProgress circleProgress;
     private int progressStatus = 0;
-    private TextView textView;
+    private TextView rankView;
     private Handler handler = new Handler();
     private SharedPreferences SP;
     private SharedPreferences settings;
     private SharedPreferences.Editor editor;
-    private static int Percent;
     private PrefManager prefManager;
     private Button PercentileB, AddB, MulB, MixB, LoopB;
 
 //    Handler handler = new Handler();
     private ProgressUpdater percentP, addP, mulP, mixedP, loopP;
+
+
     private String android_id;
     class USER {
         private String userid;
@@ -70,12 +71,19 @@ public class Strengths extends AppCompatActivity {
         MulB = (Button) findViewById(R.id.MulT);
         MixB = (Button) findViewById(R.id.MixedT);
         LoopB = (Button) findViewById(R.id.LoopT);
+        rankView = (TextView) findViewById(R.id.RankView);
+
         final Toast[] toast = new Toast[1];
 
         SP = PreferenceManager.getDefaultSharedPreferences(Strengths.this);
         settings = PreferenceManager.getDefaultSharedPreferences(Strengths.this);
         editor = settings.edit();
+
+
+
+
         CalculatePercentile();
+
 
 
 
@@ -180,7 +188,6 @@ public class Strengths extends AppCompatActivity {
 //        Toast.makeText(myContext, "Your Device ID: "+android_id, Toast.LENGTH_SHORT).show();
 
         final Toast toastMessage1 = Toast.makeText(Strengths.this, "I am the toast!", Toast.LENGTH_LONG );
-        Percent=0;
 
         float Currentadd = prefManager.getAddSTRENGTH();
         float Currentmul = prefManager.getMulSTRENGTH();
@@ -200,19 +207,27 @@ public class Strengths extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                String percentS="0";
+                String percentS="0", rankS="1", totalS="1";
+                int Percent, Rank, Total;
                 try {
                     JSONObject obj = new JSONObject(response);
-                    percentS = obj.getString("ResponsStr");
+                    percentS = obj.getString("Percent");
+                    rankS = obj.getString("Rank");
+                    totalS = obj.getString("Total");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 //                String set = "Your rank is 1 out of 1!";
                 Percent = Integer.parseInt(percentS);
+                Rank = Integer.parseInt(rankS);
+                Total = Integer.parseInt(totalS);
 
+                rankView.setText("World Rank: "+Integer.toString(Rank)+"/"+Integer.toString(Total)+"!");
                 prefManager.setPerSTRENGTH((float)Percent);
-                Toast.makeText(Strengths.this, "Percent is: : "+Integer.toString(Percent), Toast.LENGTH_SHORT).show();
-                Toast.makeText(Strengths.this, "Percentile is: : "+prefManager.getPerSTRENGTH(), Toast.LENGTH_SHORT).show();
+                prefManager.setUserRANK((int)Rank);
+                prefManager.setTotalUSERS((int)Total);
+//                Toast.makeText(Strengths.this, "Percent is: : "+Integer.toString(Percent), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Strengths.this, "Percentile is: : "+prefManager.getPerSTRENGTH(), Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {

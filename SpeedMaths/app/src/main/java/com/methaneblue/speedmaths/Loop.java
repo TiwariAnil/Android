@@ -19,18 +19,15 @@ public class Loop extends Activity {
 
     private ProgressBar progressBar;
     private CircleProgress circleProgress;
-    private int progressStatus = 0;
+    private int progressStatus = 100;
     private TextView textView;
     private Handler handler = new Handler();
 
     private int num1, num2, op1, tempNum;
     private String Que;
-    private String Ans, CorrectAns;
-    private TextView QueView, AnsView, TimerField, ScoreView;
-    private int result;
-    private int score, total;
+    private TextView QueView;
     private int finaAns;
-    private int started = 0, doneLoop=0;
+    private int started = 0;
     private Thread th;
     private boolean LOOP;
 
@@ -40,28 +37,17 @@ public class Loop extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loop);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-        circleProgress = (CircleProgress) findViewById(R.id.circle_progress);
-        textView = (TextView) findViewById(R.id.textView1);
+//        circleProgress = (CircleProgress) findViewById(R.id.circle_progress);
+//        textView = (TextView) findViewById(R.id.textView1);
         QueView = (TextView) findViewById(R.id.instruction);
 
         LOOP = true;
-
-
+        started = 0;
         GameSettings.CurrentTimeScore=0;
         GameSettings.CurrentType = 4;
 
-        progressBar.setScaleY(3f);
-        // Start long running operation in a background thread
-//        Random r = new Random();
-//
-//        finaAns = r.nextInt(GameSettings.ADD_HIGH - GameSettings.ADD_LOW + 1) + GameSettings.ADD_LOW;
-        QueView.setText("Get Ready!");
-        doneLoop = 0;
-//        for (int i=0; i<3; i++){
-//             Progress(1);
-//            doneLoop++;
-//
-//        }
+        progressBar.setScaleY(6f);
+
         Progress(GameSettings.QUE_TOTAL);
 
     }
@@ -79,6 +65,7 @@ public class Loop extends Activity {
     @Override
     public void onDestroy() {
 //        thread.interrupt();
+        LOOP = false;
         th.interrupt();
         Loop.this.finish();
         Thread.currentThread().interrupt();
@@ -108,9 +95,9 @@ public class Loop extends Activity {
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
-                            circleProgress.setProgress(progressStatus);
+//                            circleProgress.setProgress(progressStatus);
                             progressBar.setProgress(progressStatus);
-                            textView.setText(Integer.toString(progressStatus));
+//                            textView.setText(Integer.toString(progressStatus));
 //                            It works hee as well!!
 //                            QueView.setText(Que);
                         }
@@ -126,7 +113,7 @@ public class Loop extends Activity {
                         });
                         // Sleep for 200 milliseconds.
                         //Just to display the progress slowly
-                        Thread.sleep(30);
+                        Thread.sleep(GameSettings.LoopTime);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

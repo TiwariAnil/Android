@@ -15,12 +15,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/userAnswer"
         android:textStyle="bold"
-        android:background="@drawable/textview_bg"
-        android:textColor="@color/Black"
+        android:textColor="@color/DarkBlue"
         android:textSize="25dp"
         android:textAlignment="center"
         android:gravity="center"
-        android:text="Hey there, below is a magic button! Once you click that, in the TwoSome Section, player 1 will have all answers coming in DACB,DACB.. And you can outrun almost anyone using this magic. You can enable and disable form same button.Just act like a pro!"
+        android:text="Hey there, below is a magic button! Once you click that, in the TwoSome Section, player 1 will have all answers coming in DBCA,DBCA.. And you can outrun almost anyone using this magic. You can enable and disable form same button.Just act like a pro!"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -31,7 +30,8 @@
         android:background="@color/Pink"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"/>
 

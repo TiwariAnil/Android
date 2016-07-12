@@ -62,20 +62,20 @@ public class MainActivity extends AppCompatActivity  {
                 if (GameSettings.PreTime < 25) {
 
                     Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
-//                    prefManager.setAddLEVEL("3");
-//                    prefManager.setMulLEVEL("2");
-                    editor.putString("addLEVEL","3");
-                    editor.putString("mulLEVEL","2");
-                    editor.commit();
+                    prefManager.setAddLEVEL("3");
+                    prefManager.setMulLEVEL("2");
+//                    editor.putString("addLEVEL","3");
+//                    editor.putString("mulLEVEL","2");
+//                    editor.commit();
 
                 }
             } else if (GameSettings.PreScore == 4) {
                 if (GameSettings.PreTime < 30) {
                     Toast.makeText(MainActivity.this, "Setting up Levels for you!", Toast.LENGTH_SHORT).show();
 
-//                    prefManager.setAddLEVEL("2");
-                    editor.putString("addLEVEL","2");
-                    editor.commit();
+                    prefManager.setAddLEVEL("2");
+//                    editor.putString("addLEVEL","2");
+//                    editor.commit();
                 }
             } else {
                 prefManager.setLEVEL(1);
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity  {
         loopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                int x = Integer.parseInt(prefManager.getLoopLEVEL().toString());
                 GameSettings.init(Integer.parseInt(prefManager.getLoopLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Loop.class);
                 startActivity(i);
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                GameSettings.init(Integer.parseInt(SP.getString("duelType", "1").toString()));
+                GameSettings.init(Integer.parseInt(prefManager.getDuelLEVEL().toString()));
                 Intent i = new Intent(MainActivity.this, Showoff.class);
                 startActivity(i);
             }

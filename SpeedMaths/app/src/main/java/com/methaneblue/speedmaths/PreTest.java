@@ -30,7 +30,8 @@ public class PreTest extends Activity {
     private TextView TimerView;
     private Button[] opBtn = new Button[4];
     private boolean isRunning = false;
-    private Button startB, skipB;
+    private Button startB;
+    private TextView skipB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class PreTest extends Activity {
 
         setContentView(R.layout.activity_before_test);
         startB = (Button) findViewById(R.id.StartBtn);
-        skipB = (Button) findViewById(R.id.SkipBtn);
+        skipB = (TextView) findViewById(R.id.SkipBtn);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);

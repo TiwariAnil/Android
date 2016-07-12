@@ -248,7 +248,7 @@ public class Duel extends Activity {
         Random r = new Random();
         op1 = r.nextInt(4);
 
-        if(Integer.parseInt(SP.getString("Magic", "0").toString())==1 && OP==0){
+        if(Integer.parseInt(SP.getString("Magic", "0").toString())==1 && OP==1){
             //Cheat
 
             if (MagicCounter == 0) {

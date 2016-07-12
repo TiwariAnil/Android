@@ -24,14 +24,14 @@ public class About extends AppCompatActivity {
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .setImage(R.drawable.dummy_image)
+                .setImage(R.drawable.app_icon)
                 .setDescription(getString(R.string.about_page_description))
-                .addItem(new Element().setTitle("Version 2.1"))
+                .addItem(new Element().setTitle("Version 1.0"))
 //                .addItem(adsElement)
 //                .addGroup("Connect with us")
                 .addEmail("Intel.Maths.Pro@gmail.com")
 //                .addWebsite("http://.github.io/")
-                .addFacebook("Mr.A.is.here")
+//                .addFacebook("Mr.A.is.here")
 //                .addTwitter("medyo80")
 //                .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
 //                .addP

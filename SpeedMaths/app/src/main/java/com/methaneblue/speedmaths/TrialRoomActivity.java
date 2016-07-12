@@ -32,13 +32,13 @@ public class TrialRoomActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trial_room);
-        testB = (Button) findViewById(R.id.testB);
-
-        testB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(TrialRoomActivity.this, "I am pressed for you!", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        testB = (Button) findViewById(R.id.testB);
+//
+//        testB.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(TrialRoomActivity.this, "I am pressed for you!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }

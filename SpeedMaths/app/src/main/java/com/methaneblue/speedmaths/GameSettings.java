@@ -33,6 +33,7 @@ public final class GameSettings extends Application {
 
     public static int PreScore;
     public static int PreTime;
+    public static int LoopTime;
 
     public static int CurrentScore;
     public static int CurrentTimeLimit;
@@ -77,6 +78,7 @@ public final class GameSettings extends Application {
 
             //Loop;
             CurrentTotalScore = 10;
+            LoopTime = 50;
 
         }
         //LEVEL 1
@@ -86,9 +88,10 @@ public final class GameSettings extends Application {
             ADD_HIGH = 10;
             MUL_LOW = 1;
             MUL_HIGH = 10;
-            QUE_TOTAL = 5;
+            QUE_TOTAL = 10;
             TimeMax = 6000;
             CurrentTotalScore = 10;
+            LoopTime = 65;
 
         } else if (level == 2) {
             RESISTANCE = 1;
@@ -99,6 +102,7 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 20;
             TimeMax = 6000;
             CurrentTotalScore = 20;
+            LoopTime = 55;
 
         } else if (level == 3) {
             RESISTANCE = 2;
@@ -109,6 +113,8 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 10;
             TimeMax = 11000;
             CurrentTotalScore = 30;
+            LoopTime = 40;
+
         } else if (level == 4) {
             RESISTANCE = 2;
             ADD_LOW = 10;
@@ -118,6 +124,8 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 20;
             TimeMax = 6000;
             CurrentTotalScore = 40;
+            LoopTime = 30;
+
         } else if (level == 5) {
             RESISTANCE = 3;
             ADD_LOW = 100;
@@ -127,6 +135,8 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 10;
             TimeMax = 11000;
             CurrentTotalScore = 50;
+            LoopTime = 20;
+
         } else if (level == 6) {
             RESISTANCE = 3;
             ADD_LOW = 100;
@@ -136,6 +146,7 @@ public final class GameSettings extends Application {
             QUE_TOTAL = 20;
             TimeMax = 6000;
             CurrentTotalScore = 60;
+            LoopTime = 10;
         }
 
         CurrentLevel = level;
