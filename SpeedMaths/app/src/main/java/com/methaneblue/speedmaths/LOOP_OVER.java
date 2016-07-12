@@ -61,6 +61,7 @@ public class LOOP_OVER extends AppCompatActivity {
                     boolean digitsOnly = TextUtils.isDigitsOnly(inputText.getText());
                     if( digitsOnly == false){
                         Toast.makeText(LOOP_OVER.this, "Please Enter 'Numeric' answer!", Toast.LENGTH_SHORT).show();
+                        inputText.setText("");
                     }else {
                         if(answer == Integer.parseInt(inputText.getText().toString()) ){
                             testArray = getResources().getStringArray(R.array.win);

@@ -13,35 +13,35 @@
 
     <ListPreference     android:title="Addition and Subtraction"
         android:summary="Select the level for your practice"
-        android:key="addLEVEL"
+        android:key="addType"
         android:defaultValue="1"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />
 
     <ListPreference     android:title="Multiplication and Division"
         android:summary="Select the level for your practice"
-        android:key="mulLEVEL"
+        android:key="mulType"
         android:defaultValue="1"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />
 
     <ListPreference     android:title="Equations!"
         android:summary="Select the level for your practice"
-        android:key="mixedLEVEL"
+        android:key="mixedType"
         android:defaultValue="1"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />
 
     <ListPreference     android:title="Lo{}op!"
         android:summary="Select the level for your practice"
-        android:key="loopLEVEL"
+        android:key="loopType"
         android:defaultValue="1"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />
 
     <ListPreference     android:title="TwoSome"
         android:summary="Select the level for your practice"
-        android:key="duelLEVEL"
+        android:key="duelType"
         android:defaultValue="1"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />

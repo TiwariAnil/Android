@@ -27,6 +27,7 @@ public class Multi extends Activity {
     private int score, total;
     private CountDownTimer Ctimer;
     private int CurrTime, totalTime;
+    private android.os.Handler handler = new android.os.Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,16 @@ public class Multi extends Activity {
         setContentView(R.layout.activity_mul);
 
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Toast.makeText(Multi.this, "Game Level : " + SP.getString("mulType", "1").toString(), Toast.LENGTH_SHORT).show();
+
+        final Toast toast = Toast.makeText(Multi.this, "Game Level: "+SP.getString("mulType", "1").toString(), Toast.LENGTH_SHORT);
+        toast.show();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 100);
+
 
         totalTime = 0;
         CurrTime = 0;

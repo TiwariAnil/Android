@@ -40,14 +40,14 @@ public class Add extends Activity {
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         prefManager = new PrefManager(this);
 
-        final Toast toast = Toast.makeText(Add.this, "Level: "+SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT);
+        final Toast toast = Toast.makeText(Add.this, "Game Level: "+SP.getString("addType", "1").toString(), Toast.LENGTH_SHORT);
         toast.show();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 toast.cancel();
             }
-        }, 500);
+        }, 100);
 
         totalTime = 0;
         CurrTime = 0;

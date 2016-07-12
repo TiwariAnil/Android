@@ -30,9 +30,7 @@ import org.json.JSONObject;
 
 public class Strengths extends AppCompatActivity {
 
-    private ProgressBar percentBar, addBar, mulBar, mixedBar, loopBar;
-    private CircleProgress CpercentBar, CaddBar, CmulBar, CmixedBar, CloopBar;
-    private CircleProgress circleProgress;
+    private TextView percentBar, addBar, mulBar, mixedBar, loopBar;
     private int progressStatus = 0;
     private TextView rankView;
     private Handler handler = new Handler();
@@ -40,7 +38,7 @@ public class Strengths extends AppCompatActivity {
     private SharedPreferences settings;
     private SharedPreferences.Editor editor;
     private PrefManager prefManager;
-    private Button PercentileB, AddB, MulB, MixB, LoopB;
+    private TextView PercentileB, AddB, MulB, MixB, LoopB;
 
 //    Handler handler = new Handler();
     private ProgressUpdater percentP, addP, mulP, mixedP, loopP;
@@ -66,11 +64,11 @@ public class Strengths extends AppCompatActivity {
 
         prefManager = new PrefManager(Strengths.this);
 
-        PercentileB = (Button) findViewById(R.id.PercentileT);
-        AddB = (Button) findViewById(R.id.AddT);
-        MulB = (Button) findViewById(R.id.MulT);
-        MixB = (Button) findViewById(R.id.MixedT);
-        LoopB = (Button) findViewById(R.id.LoopT);
+        PercentileB = (TextView) findViewById(R.id.PercentileT);
+        AddB = (TextView) findViewById(R.id.AddT);
+        MulB = (TextView) findViewById(R.id.MulT);
+        MixB = (TextView) findViewById(R.id.MixedT);
+        LoopB = (TextView) findViewById(R.id.LoopT);
         rankView = (TextView) findViewById(R.id.RankView);
 
         final Toast[] toast = new Toast[1];
@@ -99,7 +97,7 @@ public class Strengths extends AppCompatActivity {
                     public void run() {
                         toast[0].cancel();
                     }
-                }, 1000);
+                }, 100);
             }
         });
         AddB.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +112,7 @@ public class Strengths extends AppCompatActivity {
                     public void run() {
                         toast[0].cancel();
                     }
-                }, 1000);
+                }, 100);
             }
         });
         MulB.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +126,7 @@ public class Strengths extends AppCompatActivity {
                     public void run() {
                         toast[0].cancel();
                     }
-                }, 1000);
+                }, 100);
             }
         });
         MixB.setOnClickListener(new View.OnClickListener() {
@@ -142,7 +140,7 @@ public class Strengths extends AppCompatActivity {
                     public void run() {
                         toast[0].cancel();
                     }
-                }, 1000);
+                }, 100);
             }
         });
         LoopB.setOnClickListener(new View.OnClickListener() {
@@ -156,27 +154,27 @@ public class Strengths extends AppCompatActivity {
                     public void run() {
                         toast[0].cancel();
                     }
-                }, 1000);
+                }, 100);
             }
         });
 
-        CpercentBar = (CircleProgress) findViewById(R.id.percentBar);
-        CaddBar = (CircleProgress) findViewById(R.id.addBar);
-        CmulBar = (CircleProgress) findViewById(R.id.mulBar);
-        CmixedBar = (CircleProgress) findViewById(R.id.mixedBar);
-        CloopBar = (CircleProgress) findViewById(R.id.loopBar);
+        addBar = (TextView) findViewById(R.id.addBar);
+        mulBar = (TextView) findViewById(R.id.mulBar);
+        mixedBar = (TextView) findViewById(R.id.mixedBar);
+        loopBar = (TextView) findViewById(R.id.loopBar);
+        percentBar = (TextView) findViewById(R.id.percentBar);
 
-        addP = new ProgressUpdater(addBar, CaddBar,prefManager.getAddSTRENGTH(), 100);
-        mulP = new ProgressUpdater(mulBar, CmulBar,prefManager.getMulSTRENGTH(), 100);
-        mixedP = new ProgressUpdater(mixedBar, CmixedBar,prefManager.getMixedSTRENGTH(), 100);
-        loopP = new ProgressUpdater(loopBar,CloopBar,prefManager.getLoopSTRENGTH(), 100);
-        percentP = new ProgressUpdater(percentBar,CpercentBar, prefManager.getPerSTRENGTH(), 100);
+        addP = new ProgressUpdater(addBar,prefManager.getAddSTRENGTH(), 100);
+        mulP = new ProgressUpdater(mulBar,prefManager.getMulSTRENGTH(), 100);
+        mixedP = new ProgressUpdater(mixedBar,prefManager.getMixedSTRENGTH(), 100);
+        loopP = new ProgressUpdater(loopBar,prefManager.getLoopSTRENGTH(), 100);
+        percentP = new ProgressUpdater(percentBar,prefManager.getPerSTRENGTH(), 100);
 
-        addP.UpdateProgressC();
-        mulP.UpdateProgressC();
-        mixedP.UpdateProgressC();
-        loopP.UpdateProgressC();
-        percentP.UpdateProgressC();
+        addP.UpdateProgressT();
+        mulP.UpdateProgressT();
+        mixedP.UpdateProgressT();
+        loopP.UpdateProgressT();
+        percentP.UpdateProgressT();
     }
 
     void DisplayRank(){
@@ -233,7 +231,13 @@ public class Strengths extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                toastMessage1.setText("That didn't work!");
+                toastMessage1.setText("Couldn't fetch Rank!");
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        toastMessage1.cancel();
+                    }
+                }, 500);
             }
         }) {
             @Override

@@ -24,8 +24,8 @@ public final class GameSettings extends Application {
     public static int MUL_HIGH;
 
 
-    public static String SERVER = "http://164.99.140.98:8080/GetPer";
-//    public static String SERVER = "http://192.168.1.9:8080/GetPer";
+//    public static String SERVER = "http://164.99.140.98:8080/GetPer";
+    public static String SERVER = "http://192.168.1.12:8080/GetPer";
 
     public static int winQuotes = 26;
     public static int loosQuotes = 25;

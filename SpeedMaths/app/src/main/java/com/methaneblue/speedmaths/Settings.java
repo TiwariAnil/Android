@@ -48,50 +48,50 @@ public class Settings extends PreferenceActivity  {
                     .unregisterOnSharedPreferenceChangeListener(this);
         }
 
+        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+            if (key.equals("username")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "bob"));
+            } else if (key.equals("addType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("mulType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("mixedType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("loopType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            } else if (key.equals("duelType")) {
+                Preference pref = findPreference(key);
+                pref.setDefaultValue(prefs.getString(key, "1"));
+            }
+        }
+
+//
 //        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
 //            if (key.equals("username")) {
 //                Preference pref = findPreference(key);
 //                pref.setDefaultValue(prefs.getString(key, "bob"));
 //            } else if (key.equals("addLEVEL")) {
 //                Preference pref = findPreference(key);
-//                pref.setDefaultValue(prefs.getString(key, "1"));
+//                pref.setDefaultValue(prefManager.getAddLEVEL());
+//
 //            } else if (key.equals("mulLEVEL")) {
 //                Preference pref = findPreference(key);
-//                pref.setDefaultValue(prefs.getString(key, "1"));
+//                pref.setDefaultValue(prefManager.getMulLEVEL());
 //            } else if (key.equals("mixedLEVEL")) {
 //                Preference pref = findPreference(key);
-//                pref.setDefaultValue(prefs.getString(key, "1"));
+//                pref.setDefaultValue(prefManager.getMixedLEVEL());
 //            } else if (key.equals("loopLEVEL")) {
 //                Preference pref = findPreference(key);
-//                pref.setDefaultValue(prefs.getString(key, "1"));
+//                pref.setDefaultValue(prefManager.getLoopLEVEL());
 //            } else if (key.equals("duelLEVEL")) {
 //                Preference pref = findPreference(key);
-//                pref.setDefaultValue(prefs.getString(key, "1"));
+//                pref.setDefaultValue(prefManager.getDuelLEVEL());
 //            }
 //        }
-
-
-        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-            if (key.equals("username")) {
-                Preference pref = findPreference(key);
-                pref.setDefaultValue(prefs.getString(key, "bob"));
-            } else if (key.equals("addLEVEL")) {
-                Preference pref = findPreference(key);
-                pref.setDefaultValue(prefManager.getAddLEVEL());
-
-            } else if (key.equals("mulLEVEL")) {
-                Preference pref = findPreference(key);
-                pref.setDefaultValue(prefManager.getMulLEVEL());
-            } else if (key.equals("mixedLEVEL")) {
-                Preference pref = findPreference(key);
-                pref.setDefaultValue(prefManager.getMixedLEVEL());
-            } else if (key.equals("loopLEVEL")) {
-                Preference pref = findPreference(key);
-                pref.setDefaultValue(prefManager.getLoopLEVEL());
-            } else if (key.equals("duelLEVEL")) {
-                Preference pref = findPreference(key);
-                pref.setDefaultValue(prefManager.getDuelLEVEL());
-            }
-        }
     }
 }

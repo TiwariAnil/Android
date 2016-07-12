@@ -30,6 +30,7 @@ public class Mixed extends Activity {
     private int score, total;
     private CountDownTimer Ctimer1;
     private int CurrTime, totalTime;
+    private android.os.Handler handler = new android.os.Handler();
 
 
     PrefManager prefManager;
@@ -41,7 +42,17 @@ public class Mixed extends Activity {
         setContentView(R.layout.activity_mixed);
 
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Toast.makeText(Mixed.this, "Game Level : " + SP.getString("mixedType", "1").toString(), Toast.LENGTH_SHORT).show();
+
+        final Toast toast = Toast.makeText(Mixed.this, "Game Level: "+SP.getString("mixedType", "1").toString(), Toast.LENGTH_SHORT);
+        toast.show();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, 100);
+
+
 
         totalTime = 0;
         CurrTime = 0;
